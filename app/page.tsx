@@ -38,23 +38,14 @@ export default function Home() {
       </header>
 
       <section className="hero" id="inicio">
-        <div className="hero-glow" />
         <div className="hero-copy reveal">
           <p className="eyebrow"><span /> Consultoría & capacitación ISO</p>
           <h1>Sistemas que<br />impulsan <em>resultados.</em></h1>
           <p className="hero-lede">Ayudamos a organizaciones en Panamá y Latinoamérica a convertir la calidad, la seguridad y la eficiencia en una ventaja competitiva.</p>
           <div className="hero-actions">
-            <a className="button button-primary" href="#contacto">Solicitar diagnóstico <span>↗</span></a>
-            <a className="text-link" href="#servicios">Explorar servicios <span>↓</span></a>
+            <a className="button button-primary" href="#contacto">Solicitar diagnóstico</a>
+            <a className="button button-secondary" href="#servicios">Explorar servicios <span>↓</span></a>
           </div>
-        </div>
-        <div className="hero-visual" aria-hidden="true">
-          <div className="orbit orbit-one"><i /></div>
-          <div className="orbit orbit-two"><i /></div>
-          <div className="core"><span>EQP</span><small>MEJORA<br />CONTINUA</small></div>
-          <div className="metric metric-one"><b>+ eficiencia</b><span>Procesos optimizados</span></div>
-          <div className="metric metric-two"><b>− riesgos</b><span>Control y cumplimiento</span></div>
-          <div className="metric metric-three"><b>↑ calidad</b><span>Resultados sostenibles</span></div>
         </div>
         <div className="hero-proof"><span>Experiencia especializada</span><b>Consultoría presencial y online</b><b>Panamá · Latinoamérica</b></div>
       </section>
