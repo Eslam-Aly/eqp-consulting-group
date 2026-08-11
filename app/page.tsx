@@ -42,12 +42,12 @@ export default function Home() {
           <p className="eyebrow"><span /> Consultoría & capacitación ISO</p>
           <h1>Sistemas que<br />impulsan <em>resultados.</em></h1>
           <p className="hero-lede">Ayudamos a organizaciones en Panamá y Latinoamérica a convertir la calidad, la seguridad y la eficiencia en una ventaja competitiva.</p>
+          <div className="hero-proof"><span>Experiencia especializada</span><b>Consultoría presencial y online</b><b>Panamá · Latinoamérica</b></div>
           <div className="hero-actions">
             <a className="button button-primary" href="#contacto">Solicitar diagnóstico</a>
-            <a className="button button-secondary" href="#servicios">Explorar servicios <span>↓</span></a>
+            <a className="button button-secondary" href="#servicios">Explorar servicios</a>
           </div>
         </div>
-        <div className="hero-proof"><span>Experiencia especializada</span><b>Consultoría presencial y online</b><b>Panamá · Latinoamérica</b></div>
       </section>
 
       <div className="standards-strip" aria-label="Áreas de especialidad">
