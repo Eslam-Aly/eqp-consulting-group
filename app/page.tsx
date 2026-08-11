@@ -60,7 +60,9 @@ export default function Home() {
       </section>
 
       <div className="standards-strip" aria-label="Áreas de especialidad">
-        {standards.map((standard) => <span key={standard}>{standard}<i>✦</i></span>)}
+        <div className="standards-track">
+          {standards.map((standard) => <span key={standard}>{standard}<i>✦</i></span>)}
+        </div>
       </div>
 
       <section className="section intro" id="nosotros">
