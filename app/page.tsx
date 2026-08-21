@@ -29,21 +29,21 @@ const standards = [
 const teamMembers = [
   {
     image: "/team/team-member-01.png",
-    title: "Estrategia & Calidad",
-    nickname: "La primera compuerta",
-    text: "Convierte cada requisito en una ruta clara, práctica y medible.",
+    title: "La mano derecha",
+    nickname: "Asistente nivel Canal",
+    text: "Convierte las ideas del Big Boss en planes que sí caben en el calendario.",
   },
   {
     image: "/team/team-member-02.png",
-    title: "Proyectos & Clientes",
-    nickname: "La brújula del equipo",
-    text: "Mantiene a las personas, los tiempos y los objetivos en la misma dirección.",
+    title: "La mano izquierda",
+    nickname: "Jefa de que todo pase",
+    text: "Sabe dónde está cada proyecto, cada cliente y probablemente también las llaves.",
   },
   {
     image: "/team/team-member-03.png",
-    title: "Operaciones & Mejora",
-    nickname: "El puente de soluciones",
-    text: "Hace que las buenas ideas crucen de la estrategia a la operación.",
+    title: "El que abre las compuertas",
+    nickname: "Asistente del asistente",
+    text: "Resuelve lo que nadie sabía que estaba bloqueando el Canal.",
   },
 ];
 
@@ -239,14 +239,14 @@ export default function Home() {
           </div>
           <div>
             <h2>
-              Personas que hacen
+              El Big Boss
               <br />
-              que todo <em>fluya.</em>
+              y su <em>crew.</em>
             </h2>
             <p>
-              Experiencia, criterio y una buena dosis de coordinación. Este es
-              el equipo que convierte la mejora continua en trabajo de todos
-              los días.
+              Una organización perfectamente horizontal… excepto cuando llega
+              el Big Boss. Por suerte, esta tripulación sabe mantener el Canal
+              fluyendo.
             </p>
           </div>
         </div>
@@ -265,16 +265,16 @@ export default function Home() {
               <p>Presidente &amp; CEO</p>
               <h3>El capitán del Canal</h3>
               <span>
-                Marca el rumbo, abre las compuertas y mantiene la visión en
-                movimiento.
+                Abre las compuertas, marca el rumbo y, según fuentes internas,
+                siempre tiene la última palabra.
               </span>
             </div>
           </article>
 
           <div className="team-crew">
             <div className="team-crew-heading">
-              <span>LA TRIPULACIÓN</span>
-              <p>Los que mantienen el Canal de las ideas fluyendo.</p>
+              <span>ASISTENTES DEL BIG BOSS</span>
+              <p>Los que mantienen el Canal fluyendo mientras él supervisa.</p>
             </div>
             {teamMembers.map((member, index) => (
               <article className="team-member" key={member.title}>
