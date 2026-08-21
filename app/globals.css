@@ -468,9 +468,9 @@ h2 em {
   background: var(--navy);
   color: #fff;
   min-width: 0;
-  height: clamp(480px, 36vw, 560px);
-  display: grid;
-  grid-template-columns: minmax(260px, 54%) 1fr;
+  height: clamp(570px, 43vw, 650px);
+  display: flex;
+  flex-direction: column;
 }
 .team-photo {
   overflow: hidden;
@@ -491,8 +491,14 @@ h2 em {
 }
 .team-lead-photo {
   min-height: 0;
-  height: 100%;
+  height: clamp(360px, 27vw, 420px);
   width: 100%;
+  flex: none;
+}
+.team-lead-photo img {
+  width: 54%;
+  min-width: 260px;
+  margin-inline: auto;
 }
 .team-badge {
   position: absolute;
@@ -508,6 +514,7 @@ h2 em {
 }
 .team-lead-copy {
   padding: 26px;
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -535,7 +542,7 @@ h2 em {
   display: grid;
   grid-template-rows: auto repeat(3, 1fr);
   gap: 10px;
-  height: clamp(480px, 36vw, 560px);
+  height: clamp(570px, 43vw, 650px);
 }
 .team-crew-heading {
   background: var(--green);
@@ -558,7 +565,7 @@ h2 em {
 }
 .team-member {
   display: grid;
-  grid-template-columns: minmax(115px, 35%) 1fr;
+  grid-template-columns: minmax(115px, 31%) 1fr;
   min-height: 0;
   background: #fff;
   overflow: hidden;
@@ -737,14 +744,14 @@ footer > small {
     gap: 38px;
   }
   .team-lead {
-    height: clamp(480px, 60vw, 560px);
+    height: clamp(570px, 70vw, 640px);
   }
   .team-lead-photo {
     min-height: 0;
-    height: 100%;
+    height: 390px;
   }
   .team-crew {
-    height: 540px;
+    height: 650px;
   }
   footer {
     grid-template-columns: 1fr 1fr;
@@ -843,11 +850,18 @@ footer > small {
   }
   .team-lead-photo {
     min-height: 0;
-    height: 430px;
+    height: 360px;
   }
   .team-lead {
-    display: block;
+    display: flex;
     height: auto;
+  }
+  .team-lead-photo img {
+    width: 70%;
+  }
+  .team-crew {
+    height: auto;
+    grid-template-rows: auto repeat(3, minmax(190px, auto));
   }
   .team-lead-copy {
     padding: 25px 22px 28px;
