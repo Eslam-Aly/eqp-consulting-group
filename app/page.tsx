@@ -238,20 +238,18 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <form
-          className="contact-form"
-          action="mailto:info@eqpconsulting.com"
-          method="post"
-          encType="text/plain"
-        >
+        <div className="contact-form" aria-disabled="true">
+          <p className="contact-form-notice">
+            Formulario temporalmente deshabilitado
+          </p>
           <div className="field-row">
             <label>
               Nombre
-              <input name="nombre" required placeholder="Tu nombre" />
+              <input name="nombre" disabled placeholder="Tu nombre" />
             </label>
             <label>
               Empresa
-              <input name="empresa" placeholder="Nombre de empresa" />
+              <input name="empresa" disabled placeholder="Nombre de empresa" />
             </label>
           </div>
           <label>
@@ -259,13 +257,13 @@ export default function Home() {
             <input
               type="email"
               name="email"
-              required
+              disabled
               placeholder="tu@empresa.com"
             />
           </label>
           <label>
             ¿En qué podemos ayudarte?
-            <select name="servicio" defaultValue="">
+            <select name="servicio" defaultValue="" disabled>
               <option value="" disabled>
                 Selecciona un servicio
               </option>
@@ -280,14 +278,21 @@ export default function Home() {
             <textarea
               name="mensaje"
               rows={4}
+              disabled
               placeholder="Cuéntanos brevemente sobre tu objetivo..."
             />
           </label>
-          <button className="button button-primary" type="submit">
-            Enviar consulta <span>↗</span>
+          <button className="button button-primary" type="button" disabled>
+            Formulario no disponible
           </button>
-          <small>Al enviar aceptas ser contactado por EQP Consulting.</small>
-        </form>
+          <small>
+            Mientras tanto, escríbenos a{" "}
+            <a href="mailto:info@eqpconsulting.com">
+              info@eqpconsulting.com
+            </a>
+            .
+          </small>
+        </div>
       </section>
 
       <footer>
