@@ -26,6 +26,27 @@ const standards = [
   "GESTIÓN DE OPERACIONES",
 ];
 
+const teamMembers = [
+  {
+    image: "/team/team-member-01.png",
+    title: "Estrategia & Calidad",
+    nickname: "La primera compuerta",
+    text: "Convierte cada requisito en una ruta clara, práctica y medible.",
+  },
+  {
+    image: "/team/team-member-02.png",
+    title: "Proyectos & Clientes",
+    nickname: "La brújula del equipo",
+    text: "Mantiene a las personas, los tiempos y los objetivos en la misma dirección.",
+  },
+  {
+    image: "/team/team-member-03.png",
+    title: "Operaciones & Mejora",
+    nickname: "El puente de soluciones",
+    text: "Hace que las buenas ideas crucen de la estrategia a la operación.",
+  },
+];
+
 export default function Home() {
   return (
     <main>
@@ -37,6 +58,7 @@ export default function Home() {
           <a href="#nosotros">Nosotros</a>
           <a href="#servicios">Servicios</a>
           <a href="#metodo">Método</a>
+          <a href="#equipo">Equipo</a>
           <a href="#contacto">Contacto</a>
         </nav>
         <a className="nav-cta" href="#contacto">
@@ -210,10 +232,74 @@ export default function Home() {
         </ol>
       </section>
 
+      <section className="section team" id="equipo">
+        <div className="team-heading">
+          <div className="section-kicker">
+            <span>04</span> NUESTRO EQUIPO
+          </div>
+          <div>
+            <h2>
+              Personas que hacen
+              <br />
+              que todo <em>fluya.</em>
+            </h2>
+            <p>
+              Experiencia, criterio y una buena dosis de coordinación. Este es
+              el equipo que convierte la mejora continua en trabajo de todos
+              los días.
+            </p>
+          </div>
+        </div>
+
+        <div className="team-showcase">
+          <article className="team-lead">
+            <div className="team-photo team-lead-photo">
+              <img
+                src="/team/president-ceo.png"
+                alt="Presidente y CEO de EQP Consulting"
+                loading="lazy"
+              />
+              <span className="team-badge">EL BIG BOSS</span>
+            </div>
+            <div className="team-lead-copy">
+              <p>Presidente &amp; CEO</p>
+              <h3>El capitán del Canal</h3>
+              <span>
+                Marca el rumbo, abre las compuertas y mantiene la visión en
+                movimiento.
+              </span>
+            </div>
+          </article>
+
+          <div className="team-crew">
+            <div className="team-crew-heading">
+              <span>LA TRIPULACIÓN</span>
+              <p>Los que mantienen el Canal de las ideas fluyendo.</p>
+            </div>
+            {teamMembers.map((member, index) => (
+              <article className="team-member" key={member.title}>
+                <div className="team-photo team-member-photo">
+                  <img
+                    src={member.image}
+                    alt={`Miembro ${index + 1} del equipo de EQP Consulting`}
+                    loading="lazy"
+                  />
+                </div>
+                <div className="team-member-copy">
+                  <span>{member.nickname}</span>
+                  <h3>{member.title}</h3>
+                  <p>{member.text}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="contact" id="contacto">
         <div className="contact-copy">
           <div className="section-kicker light">
-            <span>04</span> HABLEMOS
+            <span>05</span> HABLEMOS
           </div>
           <h2>
             Tu próximo nivel

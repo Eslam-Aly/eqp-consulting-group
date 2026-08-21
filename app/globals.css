@@ -427,6 +427,151 @@ h2 em {
   margin: 0;
   color: var(--muted);
 }
+.team {
+  background: #eceee8;
+}
+.team-heading {
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  gap: 8vw;
+  align-items: start;
+  margin-bottom: 64px;
+}
+.team-heading h2 {
+  font-size: clamp(40px, 4.6vw, 68px);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+  margin-bottom: 22px;
+}
+.team-heading h2 em {
+  color: var(--green);
+  font-style: normal;
+}
+.team-heading > div:last-child > p {
+  max-width: 650px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0;
+}
+.team-showcase {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(370px, 0.88fr);
+  gap: 28px;
+  align-items: stretch;
+}
+.team-lead {
+  background: var(--navy);
+  color: #fff;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+.team-photo {
+  overflow: hidden;
+  background: #fff;
+  position: relative;
+}
+.team-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.45s ease;
+}
+.team-lead:hover .team-photo img,
+.team-member:hover .team-photo img {
+  transform: scale(1.015);
+}
+.team-lead-photo {
+  min-height: 590px;
+  flex: 1;
+}
+.team-badge {
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+  padding: 9px 13px;
+  background: var(--green);
+  color: #fff;
+  font: 800 10px "Manrope";
+  letter-spacing: 0.15em;
+  border-radius: 100px;
+  box-shadow: 0 10px 25px rgba(6, 160, 85, 0.28);
+}
+.team-lead-copy {
+  padding: 30px 34px 34px;
+}
+.team-lead-copy > p,
+.team-crew-heading > span,
+.team-member-copy > span {
+  font: 700 10px "Manrope";
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.team-lead-copy > p {
+  color: var(--lime);
+  margin: 0 0 10px;
+}
+.team-lead-copy h3 {
+  font-size: clamp(27px, 2.3vw, 36px);
+  margin-bottom: 10px;
+}
+.team-lead-copy > span {
+  color: #aeb3c0;
+  line-height: 1.6;
+}
+.team-crew {
+  display: grid;
+  grid-template-rows: auto repeat(3, 1fr);
+  gap: 14px;
+}
+.team-crew-heading {
+  background: var(--green);
+  color: #fff;
+  padding: 23px 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.team-crew-heading > span {
+  white-space: nowrap;
+}
+.team-crew-heading p {
+  font-size: 13px;
+  line-height: 1.45;
+  margin: 0;
+  text-align: right;
+  color: #d4f8e4;
+}
+.team-member {
+  display: grid;
+  grid-template-columns: minmax(130px, 38%) 1fr;
+  min-height: 218px;
+  background: #fff;
+  overflow: hidden;
+}
+.team-member-copy {
+  padding: 25px 25px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.team-member-copy > span {
+  color: var(--green);
+}
+.team-member-copy h3 {
+  font-size: clamp(18px, 1.6vw, 25px);
+  line-height: 1.2;
+  margin: 9px 0 10px;
+}
+.team-member-copy p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
+  margin: 0;
+}
 .contact {
   background: var(--navy);
   color: #fff;
@@ -562,7 +707,9 @@ footer > small {
   }
   .intro-grid,
   .method,
-  .contact {
+  .contact,
+  .team-heading,
+  .team-showcase {
     grid-template-columns: 1fr;
   }
   .section-heading {
@@ -574,6 +721,12 @@ footer > small {
   }
   .contact {
     gap: 70px;
+  }
+  .team-heading {
+    gap: 38px;
+  }
+  .team-lead-photo {
+    min-height: 720px;
   }
   footer {
     grid-template-columns: 1fr 1fr;
@@ -663,6 +816,36 @@ footer > small {
   }
   .method {
     gap: 55px;
+  }
+  .team-heading {
+    margin-bottom: 42px;
+  }
+  .team-heading h2 {
+    font-size: 43px;
+  }
+  .team-lead-photo {
+    min-height: 510px;
+  }
+  .team-lead-copy {
+    padding: 25px 22px 28px;
+  }
+  .team-crew-heading {
+    display: block;
+    padding: 20px;
+  }
+  .team-crew-heading p {
+    text-align: left;
+    margin-top: 7px;
+  }
+  .team-member {
+    grid-template-columns: 42% 1fr;
+    min-height: 205px;
+  }
+  .team-member-copy {
+    padding: 19px 16px;
+  }
+  .team-member-copy p {
+    font-size: 12px;
   }
   .contact {
     padding: 85px 22px;
