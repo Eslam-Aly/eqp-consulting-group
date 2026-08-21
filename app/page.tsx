@@ -35,7 +35,7 @@ const teamMembers = [
   },
   {
     image: "/team/team-member-02.png",
-    title: "La mano izquierda",
+    title: "La asistente que manda",
     nickname: "Jefa de que todo pase",
     text: "Sabe dónde está cada proyecto, cada cliente y probablemente también las llaves.",
   },
