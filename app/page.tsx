@@ -238,18 +238,15 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <div className="contact-form" aria-disabled="true">
-          <p className="contact-form-notice">
-            Formulario temporalmente deshabilitado
-          </p>
+        <form className="contact-form">
           <div className="field-row">
             <label>
               Nombre
-              <input name="nombre" disabled placeholder="Tu nombre" />
+              <input name="nombre" required placeholder="Tu nombre" />
             </label>
             <label>
               Empresa
-              <input name="empresa" disabled placeholder="Nombre de empresa" />
+              <input name="empresa" placeholder="Nombre de empresa" />
             </label>
           </div>
           <label>
@@ -257,13 +254,13 @@ export default function Home() {
             <input
               type="email"
               name="email"
-              disabled
+              required
               placeholder="tu@empresa.com"
             />
           </label>
           <label>
             ¿En qué podemos ayudarte?
-            <select name="servicio" defaultValue="" disabled>
+            <select name="servicio" defaultValue="">
               <option value="" disabled>
                 Selecciona un servicio
               </option>
@@ -278,21 +275,14 @@ export default function Home() {
             <textarea
               name="mensaje"
               rows={4}
-              disabled
               placeholder="Cuéntanos brevemente sobre tu objetivo..."
             />
           </label>
-          <button className="button button-primary" type="button" disabled>
-            Formulario no disponible
+          <button className="button button-primary" type="button">
+            Enviar consulta <span>↗</span>
           </button>
-          <small>
-            Mientras tanto, escríbenos a{" "}
-            <a href="mailto:info@eqpconsulting.com">
-              info@eqpconsulting.com
-            </a>
-            .
-          </small>
-        </div>
+          <small>Al enviar aceptas ser contactado por EQP Consulting.</small>
+        </form>
       </section>
 
       <footer>
