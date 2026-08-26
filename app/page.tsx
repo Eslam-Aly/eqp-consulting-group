@@ -26,24 +26,26 @@ const standards = [
   "GESTIÓN DE OPERACIONES",
 ];
 
-const teamMembers = [
+const leadershipTeam = [
   {
-    image: "/team/team-member-01.png",
-    title: "La mano derecha",
-    nickname: "Asistente nivel Canal",
-    text: "Convierte las ideas del Big Boss en planes que sí caben en el calendario.",
+    image: "/team/leadership/isaac-de-leon.png",
+    name: "Isaac De León",
+    role: "Director of Business Excellence & Supply Chain Solutions",
   },
   {
-    image: "/team/team-member-02.png",
-    title: "La asistente que manda",
-    nickname: "Jefa de que todo pase",
-    text: "Sabe dónde está cada proyecto, cada cliente y probablemente también las llaves.",
+    image: "/team/leadership/angelica-ospino.png",
+    name: "Angelica Ospino",
+    role: "Director of Operational Excellence",
   },
   {
-    image: "/team/team-member-03.png",
-    title: "El que abre las compuertas",
-    nickname: "Asistente del asistente",
-    text: "Resuelve lo que nadie sabía que estaba bloqueando el Canal.",
+    image: "/team/leadership/eduardo-candanedo.png",
+    name: "Eduardo Candanedo",
+    role: "Director of Logistics & International Trade",
+  },
+  {
+    image: "/team/leadership/eslam-aly.png",
+    name: "Eslam Aly",
+    role: "Director of Digital Transformation & AI Solutions",
   },
 ];
 
@@ -239,60 +241,60 @@ export default function Home() {
           </div>
           <div>
             <h2>
-              El Big Boss
+              Liderazgo que convierte
               <br />
-              y su <em>crew.</em>
+              visión en <em>resultados.</em>
             </h2>
             <p>
-              Una organización perfectamente horizontal… excepto cuando llega
-              el Big Boss. Por suerte, esta tripulación sabe mantener el Canal
-              fluyendo.
+              Nuestro equipo directivo reúne experiencia en excelencia
+              empresarial, operaciones, logística, transformación digital y
+              soluciones de inteligencia artificial.
             </p>
           </div>
         </div>
 
-        <div className="team-showcase">
-          <article className="team-lead">
-            <div className="team-photo team-lead-photo">
-              <img
-                src="/team/president-ceo.png"
-                alt="Presidente y CEO de EQP Consulting"
-                loading="lazy"
-              />
-              <span className="team-badge">EL BIG BOSS</span>
-            </div>
-            <div className="team-lead-copy">
-              <p>Presidente &amp; CEO</p>
-              <h3>El capitán del Canal</h3>
-              <span>
-                Abre las compuertas, marca el rumbo y, según fuentes internas,
-                siempre tiene la última palabra.
-              </span>
-            </div>
-          </article>
-
-          <div className="team-crew">
-            <div className="team-crew-heading">
-              <span>ASISTENTES DEL BIG BOSS</span>
-              <p>Los que mantienen el Canal fluyendo mientras él supervisa.</p>
-            </div>
-            {teamMembers.map((member, index) => (
-              <article className="team-member" key={member.title}>
-                <div className="team-photo team-member-photo">
-                  <img
-                    src={member.image}
-                    alt={`Miembro ${index + 1} del equipo de EQP Consulting`}
-                    loading="lazy"
-                  />
-                </div>
-                <div className="team-member-copy">
-                  <span>{member.nickname}</span>
-                  <h3>{member.title}</h3>
-                  <p>{member.text}</p>
-                </div>
-              </article>
-            ))}
+        <article className="leadership-feature">
+          <div className="leadership-feature-photo">
+            <img
+              src="/team/leadership/emigdio-quintero.png"
+              alt="Emigdio Quintero, Managing Director"
+              loading="lazy"
+            />
           </div>
+          <div className="leadership-feature-copy">
+            <span>Dirección general</span>
+            <h3>Emigdio Quintero</h3>
+            <p>Managing Director</p>
+            <div className="leadership-accent" aria-hidden="true" />
+            <small>
+              Dirección estratégica para transformar la excelencia operacional
+              en crecimiento sostenible.
+            </small>
+          </div>
+        </article>
+
+        <div className="leadership-grid-heading">
+          <span>Equipo directivo</span>
+          <p>Especialistas que conectan estrategia, tecnología y operación.</p>
+        </div>
+
+        <div className="leadership-grid">
+          {leadershipTeam.map((member, index) => (
+            <article className="leadership-card" key={member.name}>
+              <div className="leadership-card-photo">
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <img
+                  src={member.image}
+                  alt={`${member.name}, ${member.role}`}
+                  loading="lazy"
+                />
+              </div>
+              <div className="leadership-card-copy">
+                <h3>{member.name}</h3>
+                <p>{member.role}</p>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 

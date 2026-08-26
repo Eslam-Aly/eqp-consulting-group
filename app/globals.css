@@ -428,7 +428,7 @@ h2 em {
   color: var(--muted);
 }
 .team {
-  background: #eceee8;
+  background: #f0f2ed;
 }
 .team-heading {
   display: grid;
@@ -455,139 +455,138 @@ h2 em {
   line-height: 1.7;
   margin: 0;
 }
-.team-showcase {
+.leadership-feature {
   display: grid;
-  grid-template-columns: minmax(0, 1.12fr) minmax(370px, 0.88fr);
-  gap: 22px;
-  align-items: stretch;
+  grid-template-columns: minmax(340px, 0.82fr) 1.18fr;
   width: 100%;
   max-width: 1380px;
-  margin-inline: auto;
-}
-.team-lead {
+  min-height: 450px;
+  margin: 0 auto 64px;
   background: var(--navy);
   color: #fff;
-  min-width: 0;
-  height: clamp(570px, 43vw, 650px);
-  display: flex;
-  flex-direction: column;
 }
-.team-photo {
+.leadership-feature-photo,
+.leadership-card-photo {
   overflow: hidden;
-  background: #fff;
   position: relative;
+  background: #e8e9e6;
 }
-.team-photo img {
+.leadership-feature-photo img,
+.leadership-card-photo img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 18%;
   transition: transform 0.45s ease;
 }
-.team-lead:hover .team-photo img,
-.team-member:hover .team-photo img {
-  transform: scale(1.015);
+.leadership-feature:hover img,
+.leadership-card:hover img {
+  transform: scale(1.02);
 }
-.team-lead-photo {
-  min-height: 0;
-  height: clamp(360px, 27vw, 420px);
-  width: 100%;
-  flex: none;
-}
-.team-lead-photo img {
-  width: 54%;
-  min-width: 260px;
-  margin-inline: auto;
-}
-.team-badge {
-  position: absolute;
-  left: 24px;
-  bottom: 24px;
-  padding: 9px 13px;
-  background: var(--green);
-  color: #fff;
-  font: 800 10px "Manrope";
-  letter-spacing: 0.15em;
-  border-radius: 100px;
-  box-shadow: 0 10px 25px rgba(6, 160, 85, 0.28);
-}
-.team-lead-copy {
-  padding: 26px;
-  flex: 1;
+.leadership-feature-copy {
+  padding: clamp(44px, 6vw, 86px);
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.team-lead-copy > p,
-.team-crew-heading > span,
-.team-member-copy > span {
-  font: 700 10px "Manrope";
-  letter-spacing: 0.14em;
+.leadership-feature-copy > span,
+.leadership-grid-heading > span {
+  font: 700 11px "Manrope";
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-}
-.team-lead-copy > p {
   color: var(--lime);
-  margin: 0 0 10px;
 }
-.team-lead-copy h3 {
-  font-size: clamp(24px, 2vw, 32px);
-  margin-bottom: 10px;
+.leadership-feature-copy h3 {
+  font-size: clamp(38px, 4vw, 58px);
+  letter-spacing: -0.045em;
+  line-height: 1.05;
+  margin: 18px 0 8px;
 }
-.team-lead-copy > span {
-  color: #aeb3c0;
-  line-height: 1.6;
+.leadership-feature-copy > p {
+  color: #c3c8d3;
+  font-size: 18px;
+  margin: 0;
 }
-.team-crew {
-  display: grid;
-  grid-template-rows: auto repeat(3, 1fr);
-  gap: 10px;
-  height: clamp(570px, 43vw, 650px);
-}
-.team-crew-heading {
+.leadership-accent {
+  width: 54px;
+  height: 2px;
   background: var(--green);
-  color: #fff;
-  padding: 15px 20px;
+  margin: 30px 0 24px;
+}
+.leadership-feature-copy small {
+  color: #9299aa;
+  font-size: 14px;
+  line-height: 1.65;
+  max-width: 520px;
+}
+.leadership-grid-heading {
+  width: 100%;
+  max-width: 1380px;
+  margin: 0 auto 24px;
+  padding-top: 22px;
+  border-top: 1px solid #d6d9d3;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 28px;
 }
-.team-crew-heading > span {
-  white-space: nowrap;
-}
-.team-crew-heading p {
-  font-size: 13px;
-  line-height: 1.45;
-  margin: 0;
-  text-align: right;
-  color: #d4f8e4;
-}
-.team-member {
-  display: grid;
-  grid-template-columns: minmax(115px, 31%) 1fr;
-  min-height: 0;
-  background: #fff;
-  overflow: hidden;
-}
-.team-member-copy {
-  padding: 16px 18px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.team-member-copy > span {
+.leadership-grid-heading > span {
   color: var(--green);
 }
-.team-member-copy h3 {
-  font-size: clamp(17px, 1.4vw, 22px);
-  line-height: 1.2;
-  margin: 6px 0 8px;
-}
-.team-member-copy p {
+.leadership-grid-heading p {
   color: var(--muted);
-  font-size: 12px;
-  line-height: 1.45;
+  font-size: 13px;
+  margin: 0;
+}
+.leadership-grid {
+  width: 100%;
+  max-width: 1380px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+.leadership-card {
+  background: #fff;
+  min-width: 0;
+  border-bottom: 3px solid transparent;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+.leadership-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--green);
+}
+.leadership-card-photo {
+  aspect-ratio: 4 / 5;
+}
+.leadership-card-photo > span {
+  position: absolute;
+  z-index: 2;
+  top: 16px;
+  left: 16px;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  background: rgba(14, 17, 34, 0.9);
+  color: #fff;
+  font: 700 10px "Manrope";
+  letter-spacing: 0.08em;
+}
+.leadership-card-copy {
+  min-height: 142px;
+  padding: 23px 22px 26px;
+}
+.leadership-card-copy h3 {
+  font-size: 21px;
+  letter-spacing: -0.025em;
+  margin-bottom: 10px;
+}
+.leadership-card-copy p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
   margin: 0;
 }
 .contact {
@@ -706,6 +705,11 @@ footer > small {
   color: #777f92;
   font-size: 10px;
 }
+@media (max-width: 1100px) {
+  .leadership-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
 @media (max-width: 900px) {
   .site-header nav {
     display: none;
@@ -727,7 +731,7 @@ footer > small {
   .method,
   .contact,
   .team-heading,
-  .team-showcase {
+  .leadership-feature {
     grid-template-columns: 1fr;
   }
   .section-heading {
@@ -743,15 +747,8 @@ footer > small {
   .team-heading {
     gap: 38px;
   }
-  .team-lead {
-    height: clamp(570px, 70vw, 640px);
-  }
-  .team-lead-photo {
-    min-height: 0;
-    height: 390px;
-  }
-  .team-crew {
-    height: 650px;
+  .leadership-feature-photo {
+    height: 520px;
   }
   footer {
     grid-template-columns: 1fr 1fr;
@@ -848,41 +845,31 @@ footer > small {
   .team-heading h2 {
     font-size: 43px;
   }
-  .team-lead-photo {
-    min-height: 0;
-    height: 360px;
+  .leadership-feature {
+    margin-bottom: 50px;
   }
-  .team-lead {
-    display: flex;
-    height: auto;
+  .leadership-feature-photo {
+    height: 390px;
   }
-  .team-lead-photo img {
-    width: 70%;
+  .leadership-feature-copy {
+    padding: 38px 24px 42px;
   }
-  .team-crew {
-    height: auto;
-    grid-template-rows: auto repeat(3, minmax(190px, auto));
-  }
-  .team-lead-copy {
-    padding: 25px 22px 28px;
-  }
-  .team-crew-heading {
+  .leadership-grid-heading {
     display: block;
-    padding: 20px;
   }
-  .team-crew-heading p {
+  .leadership-grid-heading p {
     text-align: left;
-    margin-top: 7px;
+    margin-top: 8px;
   }
-  .team-member {
-    grid-template-columns: 42% 1fr;
-    min-height: 180px;
+  .leadership-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
-  .team-member-copy {
-    padding: 19px 16px;
+  .leadership-card-photo {
+    aspect-ratio: 4 / 4.5;
   }
-  .team-member-copy p {
-    font-size: 12px;
+  .leadership-card-copy {
+    min-height: 0;
   }
   .contact {
     padding: 85px 22px;
