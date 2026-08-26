@@ -21,9 +21,101 @@ const services = [
 
 const standards = [
   "ISO 9001",
-  "ISO 13485",
+  "ISO 9004",
+  "ISO 10001",
+  "ISO 10002",
+  "ISO 10003",
+  "ISO 10004",
+  "ISO 10005",
+  "ISO 10006",
+  "ISO 10007",
+  "ISO 10012",
+  "ISO 18295-1",
+  "ISO 18295-2",
+  "ISO 14001",
+  "ISO 14004",
+  "ISO 14006",
+  "ISO 14031",
+  "ISO 14040",
+  "ISO 14044",
+  "ISO/TS 14072",
+  "ISO 14046",
+  "ISO 14064-1",
+  "ISO 14064-2",
+  "ISO 14064-3",
+  "ISO 14067",
+  "ISO 14068",
   "ISO 45001",
-  "GESTIÓN DE OPERACIONES",
+  "ISO 45003",
+  "ISO 39001",
+  "ISO 31000",
+  "ISO 31010",
+  "ISO 37301",
+  "ISO 37001",
+  "ISO 37002",
+  "ISO 37003",
+  "ISO 37008",
+  "ISO/IEC 27001",
+  "ISO/IEC 27002",
+  "ISO/IEC 27005",
+  "ISO/IEC 27017",
+  "ISO/IEC 27018",
+  "ISO/IEC 27032",
+  "ISO/IEC 27701",
+  "ISO/IEC 38500",
+  "ISO/IEC 42001",
+  "ISO/IEC 20000-1",
+  "ISO 22301",
+  "ISO 22313",
+  "ISO 22316",
+  "ISO 22320",
+  "ISO 22361",
+  "ISO 22000",
+  "ISO/TS 22002",
+  "ISO 22005",
+  "HACCP",
+  "FSSC 22000",
+  "ISO 13485",
+  "ISO 14971",
+  "ISO 15189",
+  "ISO 22870",
+  "ISO/IEC 17020",
+  "ISO/IEC 17021",
+  "ISO/IEC 17024",
+  "ISO/IEC 17025",
+  "ISO/IEC 17065",
+  "ISO 17029",
+  "ISO 17067",
+  "ISO 50001",
+  "ISO 50002",
+  "ISO 50006",
+  "ISO 55001",
+  "ISO 55002",
+  "ISO 55010",
+  "ISO 30401",
+  "ISO 30405",
+  "ISO 30408",
+  "ISO 30414",
+  "ISO 30415",
+  "ISO 21502",
+  "ISO 21503",
+  "ISO 21504",
+  "ISO 56001",
+  "ISO 56002",
+  "ISO 28000",
+  "ISO 28001",
+  "ISO 28004",
+  "ISO 26000",
+  "ISO 20400",
+  "ISO 37101",
+  "ISO 21001",
+  "ISO 22483",
+  "ISO 19011",
+  "ISO 22716",
+  "IATF 16949",
+  "AS9100",
+  "AS9110",
+  "AS9120",
 ];
 
 const leadershipTeam = [
@@ -105,11 +197,19 @@ export default function Home() {
 
       <div className="standards-strip" aria-label="Áreas de especialidad">
         <div className="standards-track">
-          {standards.map((standard) => (
-            <span key={standard}>
-              {standard}
-              <i>✦</i>
-            </span>
+          {[0, 1].map((copy) => (
+            <div
+              className="standards-group"
+              key={copy}
+              aria-hidden={copy === 1 ? "true" : undefined}
+            >
+              {standards.map((standard) => (
+                <span key={`${copy}-${standard}`}>
+                  {standard}
+                  <i aria-hidden="true">✦</i>
+                </span>
+              ))}
+            </div>
           ))}
         </div>
       </div>

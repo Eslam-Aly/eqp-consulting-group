@@ -220,31 +220,55 @@ h2 em {
   background: var(--green);
   color: #fff;
   overflow: hidden;
-  padding: 18px 24px;
+  padding: 18px 0;
   font: 700 12px "Manrope";
   letter-spacing: 0.12em;
 }
 .standards-track {
   width: max-content;
-  max-width: 100%;
-  margin-inline: auto;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 48px;
   white-space: nowrap;
+  will-change: transform;
+  animation: standards-scroll-right 180s linear infinite;
+}
+.standards-group {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
 }
 .standards-track span {
   display: flex;
   align-items: center;
-  gap: 48px;
+  gap: 36px;
+  padding-right: 36px;
 }
 .standards-track i {
   font-style: normal;
   color: #9ef4c4;
 }
-.standards-track span:last-child i {
-  display: none;
+.standards-strip:hover .standards-track {
+  animation-play-state: paused;
+}
+@keyframes standards-scroll-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .standards-strip {
+    overflow-x: auto;
+  }
+  .standards-track {
+    animation: none;
+    transform: none;
+  }
+  .standards-group[aria-hidden="true"] {
+    display: none;
+  }
 }
 .section {
   padding: 120px max(7vw, 44px);
