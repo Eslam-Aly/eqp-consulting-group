@@ -51,7 +51,6 @@ const leadershipTeam = [
     image: "/team/leadership/eslam-aly.png",
     name: "Eslam Aly",
     role: "Director of Digital Transformation & AI Solutions",
-    zoom: true,
   },
 ];
 
@@ -267,9 +266,7 @@ export default function Home() {
         <div className="leadership-grid">
           {leadershipTeam.map((member, index) => (
             <article className="leadership-card" key={member.name}>
-              <div
-                className={`leadership-card-photo${member.zoom ? " leadership-card-photo--zoom" : ""}`}
-              >
+              <div className="leadership-card-photo">
                 <span>{String(index + 1).padStart(2, "0")}</span>
                 <img
                   src={member.image}

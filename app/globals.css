@@ -517,13 +517,6 @@ h2 em {
 .leadership-card-photo {
   aspect-ratio: 4 / 5;
 }
-.leadership-card-photo--zoom img {
-  object-position: center 10%;
-  transform: scale(1.22);
-}
-.leadership-card:hover .leadership-card-photo--zoom img {
-  transform: scale(1.25);
-}
 .leadership-card-photo > span {
   position: absolute;
   z-index: 2;
