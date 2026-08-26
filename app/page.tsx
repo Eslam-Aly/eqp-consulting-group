@@ -28,6 +28,11 @@ const standards = [
 
 const leadershipTeam = [
   {
+    image: "/team/leadership/emigdio-quintero.png",
+    name: "Emigdio Quintero",
+    role: "Managing Director",
+  },
+  {
     image: "/team/leadership/isaac-de-leon.png",
     name: "Isaac De León",
     role: "Director of Business Excellence & Supply Chain Solutions",
@@ -46,6 +51,7 @@ const leadershipTeam = [
     image: "/team/leadership/eslam-aly.png",
     name: "Eslam Aly",
     role: "Director of Digital Transformation & AI Solutions",
+    zoom: true,
   },
 ];
 
@@ -253,35 +259,17 @@ export default function Home() {
           </div>
         </div>
 
-        <article className="leadership-feature">
-          <div className="leadership-feature-photo">
-            <img
-              src="/team/leadership/emigdio-quintero.png"
-              alt="Emigdio Quintero, Managing Director"
-              loading="lazy"
-            />
-          </div>
-          <div className="leadership-feature-copy">
-            <span>Dirección general</span>
-            <h3>Emigdio Quintero</h3>
-            <p>Managing Director</p>
-            <div className="leadership-accent" aria-hidden="true" />
-            <small>
-              Dirección estratégica para transformar la excelencia operacional
-              en crecimiento sostenible.
-            </small>
-          </div>
-        </article>
-
         <div className="leadership-grid-heading">
           <span>Equipo directivo</span>
-          <p>Especialistas que conectan estrategia, tecnología y operación.</p>
+          <p>Una visión compartida desde cinco áreas de especialidad.</p>
         </div>
 
         <div className="leadership-grid">
           {leadershipTeam.map((member, index) => (
             <article className="leadership-card" key={member.name}>
-              <div className="leadership-card-photo">
+              <div
+                className={`leadership-card-photo${member.zoom ? " leadership-card-photo--zoom" : ""}`}
+              >
                 <span>{String(index + 1).padStart(2, "0")}</span>
                 <img
                   src={member.image}
