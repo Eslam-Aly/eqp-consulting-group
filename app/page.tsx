@@ -563,26 +563,60 @@ export default function Home() {
       </section>
 
       <footer>
-        <a className="brand dark" href="#inicio">
-          <img src="/eqp-logo.png" alt="EQP Consulting Group" />
-        </a>
-        <p>
-          Consultoría y capacitación para organizaciones que quieren mejorar de
-          verdad.
-        </p>
-        <div>
-          <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">
-            LinkedIn ↗
+        <div className="footer-brand-block">
+          <a className="brand dark" href="#inicio">
+            <img src="/eqp-logo.png" alt="EQP Consulting Group" />
           </a>
+          <p>
+            Consultoría y capacitación para organizaciones que quieren mejorar
+            de verdad.
+          </p>
+        </div>
+
+        <div className="footer-contact-list" aria-label="Datos de contacto">
+          <p>
+            <span className="footer-contact-icon" aria-hidden="true">
+              ⌖
+            </span>
+            <span>
+              <small>Ubicación</small>
+              Ciudad de Panamá, Panamá
+            </span>
+          </p>
+          <a href="tel:+5078318353">
+            <span className="footer-contact-icon" aria-hidden="true">
+              ☎︎
+            </span>
+            <span>
+              <small>Teléfono</small>
+              +507 831-8353
+            </span>
+          </a>
+          <a href="mailto:info@eqpconsulting.com">
+            <span className="footer-contact-icon" aria-hidden="true">
+              ✉︎
+            </span>
+            <span>
+              <small>Email</small>
+              info@eqpconsulting.com
+            </span>
+          </a>
+        </div>
+
+        <div className="footer-social">
+          <small>Síguenos</small>
           <a
-            href="https://www.eqpconsulting.com"
+            href="https://www.linkedin.com/company/eqp-consulting-group"
             target="_blank"
             rel="noreferrer"
           >
-            Sitio original ↗
+            LinkedIn
           </a>
         </div>
-        <small>© 2026 EQP Consulting. Todos los derechos reservados.</small>
+
+        <small className="footer-legal">
+          © 2026 EQP Consulting. Todos los derechos reservados.
+        </small>
       </footer>
     </main>
   );
