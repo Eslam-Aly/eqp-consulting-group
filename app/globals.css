@@ -2,14 +2,14 @@
 @import "tailwindcss";
 
 :root {
-  --navy: #0e1122;
-  --navy-2: #15192d;
-  --green: #06a055;
-  --lime: #19c66b;
-  --paper: #f5f6f1;
-  --ink: #151827;
-  --muted: #626777;
-  --line: #dfe1dc;
+  --navy: #042f48;
+  --navy-2: #075272;
+  --green: #0870a0;
+  --lime: #12b8d0;
+  --paper: #f4f8fa;
+  --ink: #0c2838;
+  --muted: #5f707d;
+  --line: #dbe6eb;
 }
 * {
   box-sizing: border-box;
@@ -85,10 +85,10 @@ textarea {
   background-image:
     linear-gradient(
       90deg,
-      rgba(14, 17, 34, 0.99) 0%,
-      rgba(14, 17, 34, 0.92) 38%,
-      rgba(14, 17, 34, 0.22) 70%,
-      rgba(14, 17, 34, 0.05) 100%
+      rgba(4, 47, 72, 0.99) 0%,
+      rgba(4, 47, 72, 0.92) 38%,
+      rgba(4, 47, 72, 0.22) 70%,
+      rgba(4, 47, 72, 0.05) 100%
     ),
     url("/hero-process.png");
   background-position: center;
@@ -185,12 +185,12 @@ h2 em {
   color: #fff;
 }
 .button-primary:hover {
-  background: var(--lime);
+  background: #065d86;
 }
 .button-secondary {
   border: 1px solid rgba(255, 255, 255, 0.55);
   color: #fff;
-  background: rgba(14, 17, 34, 0.25);
+  background: rgba(4, 47, 72, 0.25);
 }
 .button-secondary:hover {
   border-color: #fff;
@@ -245,7 +245,7 @@ h2 em {
 }
 .standards-track i {
   font-style: normal;
-  color: #9ef4c4;
+  color: #b8f4fb;
 }
 .standards-strip:hover .standards-track {
   animation-play-state: paused;
@@ -315,7 +315,7 @@ h2 em {
   margin-top: 24px;
   color: var(--green);
   font-weight: 600;
-  border-bottom: 1px solid #a8dabb;
+  border-bottom: 1px solid #9bcfe0;
   padding-bottom: 6px;
 }
 .stats {
@@ -452,7 +452,7 @@ h2 em {
   color: var(--muted);
 }
 .team {
-  background: #f0f2ed;
+  background: #eef4f6;
 }
 .team-heading {
   display: grid;
@@ -482,7 +482,7 @@ h2 em {
 .leadership-card-photo {
   overflow: hidden;
   position: relative;
-  background: #e8e9e6;
+  background: #e5eef2;
 }
 .leadership-card-photo img {
   display: block;
@@ -506,7 +506,7 @@ h2 em {
   max-width: 1380px;
   margin: 0 auto 24px;
   padding-top: 22px;
-  border-top: 1px solid #d6d9d3;
+  border-top: 1px solid #d2e1e7;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -651,7 +651,7 @@ footer {
   grid-template-columns: 1fr 1.3fr 0.8fr;
   align-items: start;
   gap: 40px;
-  background: #0b0e1b;
+  background: #03263b;
   color: #fff;
 }
 footer .brand {
