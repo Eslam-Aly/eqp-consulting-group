@@ -746,31 +746,6 @@ h2 em {
 .contact-form textarea:focus {
   border-color: var(--green);
 }
-.contact-form .form-honeypot {
-  display: none;
-}
-.contact-submit {
-  width: 100%;
-  justify-content: center;
-  text-align: center;
-}
-.contact-submit:disabled {
-  cursor: wait;
-  opacity: 0.72;
-}
-.form-status {
-  min-height: 18px;
-  margin: -5px 0 0;
-  text-align: center;
-  font-size: 12px;
-  line-height: 1.5;
-}
-.form-status--success {
-  color: var(--green);
-}
-.form-status--error {
-  color: #b33a3a;
-}
 .contact-form small {
   color: #8a8d95;
   font-size: 10px;
