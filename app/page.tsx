@@ -1,4 +1,5 @@
 import { FaEnvelope, FaLinkedin, FaPhoneAlt } from "react-icons/fa";
+import ContactForm from "./ContactForm";
 
 const services = [
   {
@@ -517,51 +518,7 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <form className="contact-form">
-          <div className="field-row">
-            <label>
-              Nombre
-              <input name="nombre" required placeholder="Tu nombre" />
-            </label>
-            <label>
-              Empresa
-              <input name="empresa" placeholder="Nombre de empresa" />
-            </label>
-          </div>
-          <label>
-            Email
-            <input
-              type="email"
-              name="email"
-              required
-              placeholder="tu@empresa.com"
-            />
-          </label>
-          <label>
-            ¿En qué podemos ayudarte?
-            <select name="servicio" defaultValue="">
-              <option value="" disabled>
-                Selecciona un servicio
-              </option>
-              <option>Consultoría ISO</option>
-              <option>Capacitación</option>
-              <option>Gestión y productividad</option>
-              <option>Otro</option>
-            </select>
-          </label>
-          <label>
-            Mensaje
-            <textarea
-              name="mensaje"
-              rows={4}
-              placeholder="Cuéntanos brevemente sobre tu objetivo..."
-            />
-          </label>
-          <button className="button button-primary" type="button">
-            Enviar consulta <span>↗</span>
-          </button>
-          <small>Al enviar aceptas ser contactado por EQP Consulting.</small>
-        </form>
+        <ContactForm />
       </section>
 
       <footer>
