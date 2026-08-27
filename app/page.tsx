@@ -218,7 +218,7 @@ export default function Home() {
     <main>
       <header className="site-header">
         <a className="brand" href="#inicio" aria-label="EQP Consulting, inicio">
-          <img src="/eqp-logo.png" alt="EQP Consulting Group" />
+          <img src="/eqp-logo-blue.png" alt="EQP Consulting Group" />
         </a>
         <nav aria-label="Navegación principal">
           <a href="#nosotros">Nosotros</a>
@@ -567,7 +567,7 @@ export default function Home() {
       <footer>
         <div className="footer-brand-block">
           <a className="brand dark" href="#inicio">
-            <img src="/eqp-logo.png" alt="EQP Consulting Group" />
+            <img src="/eqp-logo-blue.png" alt="EQP Consulting Group" />
           </a>
           <p>
             Consultoría y capacitación para organizaciones que quieren mejorar
