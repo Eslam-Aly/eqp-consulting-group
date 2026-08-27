@@ -146,6 +146,66 @@ const leadershipTeam = [
   },
 ];
 
+const clients = [
+  {
+    name: "Manzanillo International Terminal",
+    image: "/clients/mit.jpg",
+    format: "wide",
+  },
+  { name: "Vopak", image: "/clients/vopak.svg", format: "wide" },
+  { name: "SGS", image: "/clients/sgs.svg" },
+  {
+    name: "Bureau Veritas",
+    image: "/clients/bureau-veritas.png",
+    format: "portrait",
+  },
+  {
+    name: "Programa de las Naciones Unidas para el Desarrollo",
+    image: "/clients/pnud.png",
+    format: "portrait",
+  },
+  {
+    name: "Órgano Judicial de Panamá",
+    image: "/clients/organo-judicial.jpg",
+  },
+  {
+    name: "Centro de Atención Ciudadana 311",
+    image: "/clients/311.png",
+    format: "compact",
+  },
+  {
+    name: "AHK Panamá",
+    image: "/clients/ahk-panama.jpg",
+    format: "wide",
+  },
+  { name: "Canon", image: "/clients/canon.png", format: "wide" },
+  { name: "BIOMIN", image: "/clients/biomin.jpg" },
+  {
+    name: "Panama Fruit Company",
+    image: "/clients/pfc.png",
+  },
+  { name: "Pascual", image: "/clients/pascual.jpg" },
+  {
+    name: "Thera Hospital",
+    image: "/clients/thera-hospital.png",
+    format: "wide",
+  },
+  { name: "Viamed", image: "/clients/viamed.jpg", format: "wide" },
+  { name: "Microfeed", image: "/clients/microfeed.png", format: "wide" },
+  { name: "Sopisco Panamá", image: "/clients/sopisco.png" },
+  {
+    name: "Industrias Metálicas Carmona",
+    image: "/clients/metalicas-carmona.png",
+    format: "wide",
+  },
+  { name: "JC Supply", image: "/clients/jc-supply.jpeg" },
+  {
+    name: "Fòs Feminista",
+    image: "/clients/fos-feminista.svg",
+    format: "wide",
+  },
+];
+
 export default function Home() {
   return (
     <main>
@@ -158,6 +218,7 @@ export default function Home() {
           <a href="#servicios">Servicios</a>
           <a href="#metodo">Método</a>
           <a href="#equipo">Equipo</a>
+          <a href="#clientes">Clientes</a>
           <a href="#contacto">Contacto</a>
         </nav>
         <a className="nav-cta" href="#contacto">
@@ -383,10 +444,48 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section clients" id="clientes">
+        <div className="clients-heading">
+          <div className="section-kicker">
+            <span>05</span> NUESTROS CLIENTES
+          </div>
+          <div>
+            <h2>
+              Confianza construida
+              <br />
+              con <em>resultados.</em>
+            </h2>
+            <p>
+              Acompañamos a organizaciones públicas, privadas y multilaterales
+              en la construcción de sistemas más sólidos, eficientes y
+              sostenibles.
+            </p>
+          </div>
+        </div>
+
+        <div className="clients-meta">
+          <strong>{clients.length}</strong>
+          <span>organizaciones que han confiado en nuestra experiencia</span>
+        </div>
+
+        <div className="clients-grid">
+          {clients.map((client) => (
+            <figure
+              className={`client-card client-card--${client.format ?? "standard"}`}
+              key={client.name}
+              title={client.name}
+            >
+              <img src={client.image} alt={client.name} loading="lazy" />
+              <figcaption>{client.name}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
       <section className="contact" id="contacto">
         <div className="contact-copy">
           <div className="section-kicker light">
-            <span>05</span> HABLEMOS
+            <span>06</span> HABLEMOS
           </div>
           <h2>
             Tu próximo nivel
