@@ -204,6 +204,11 @@ const clients = [
     image: "/clients/fos-feminista.svg",
     format: "wide",
   },
+  {
+    name: "Innova Health Supplies",
+    image: "/clients/innova-health-supplies.png",
+    format: "wide",
+  },
 ];
 
 export default function Home() {
