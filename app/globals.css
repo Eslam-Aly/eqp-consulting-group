@@ -754,7 +754,7 @@ h2 em {
 footer {
   padding: 62px max(6vw, 36px) 32px;
   display: grid;
-  grid-template-columns: 1.05fr 1.25fr 0.55fr;
+  grid-template-columns: 1fr 1.25fr;
   align-items: start;
   gap: clamp(42px, 6vw, 92px);
   background: #03263b;
@@ -801,8 +801,11 @@ footer {
   font-size: 17px;
   line-height: 1;
 }
-.footer-contact-list small,
-.footer-social > small {
+.footer-contact-icon svg {
+  width: 17px;
+  height: 17px;
+}
+.footer-contact-list small {
   display: block;
   margin-bottom: 3px;
   color: #8199a6;
@@ -814,26 +817,6 @@ footer {
   color: #fff;
 }
 .footer-contact-list > a:hover .footer-contact-icon {
-  border-color: var(--lime);
-}
-.footer-social {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 9px;
-}
-.footer-social > small {
-  margin: 0;
-}
-.footer-social a {
-  color: #fff;
-  font-size: 14px;
-  font-weight: 600;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-  padding-bottom: 4px;
-}
-.footer-social a:hover {
-  color: var(--lime);
   border-color: var(--lime);
 }
 .footer-legal {
@@ -899,9 +882,6 @@ footer {
   }
   footer {
     grid-template-columns: 1fr 1fr;
-  }
-  .footer-social {
-    grid-column: 1 / -1;
   }
   .stats {
     grid-template-columns: 1fr;
@@ -1067,9 +1047,6 @@ footer {
   }
   .footer-brand-block .brand {
     margin-top: -20px;
-  }
-  .footer-social {
-    grid-column: auto;
   }
 }
 @media (prefers-reduced-motion: no-preference) {

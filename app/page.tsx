@@ -1,3 +1,5 @@
+import { FaEnvelope, FaLinkedin, FaPhoneAlt } from "react-icons/fa";
+
 const services = [
   {
     number: "01",
@@ -574,18 +576,22 @@ export default function Home() {
         </div>
 
         <div className="footer-contact-list" aria-label="Datos de contacto">
-          <p>
+          <a
+            href="https://www.linkedin.com/company/eqp-consulting-group"
+            target="_blank"
+            rel="noreferrer"
+          >
             <span className="footer-contact-icon" aria-hidden="true">
-              ⌖
+              <FaLinkedin />
             </span>
             <span>
-              <small>Ubicación</small>
-              Ciudad de Panamá, Panamá
+              <small>LinkedIn</small>
+              EQP Consulting Group
             </span>
-          </p>
+          </a>
           <a href="tel:+5078318353">
             <span className="footer-contact-icon" aria-hidden="true">
-              ☎︎
+              <FaPhoneAlt />
             </span>
             <span>
               <small>Teléfono</small>
@@ -594,23 +600,12 @@ export default function Home() {
           </a>
           <a href="mailto:info@eqpconsulting.com">
             <span className="footer-contact-icon" aria-hidden="true">
-              ✉︎
+              <FaEnvelope />
             </span>
             <span>
               <small>Email</small>
               info@eqpconsulting.com
             </span>
-          </a>
-        </div>
-
-        <div className="footer-social">
-          <small>Síguenos</small>
-          <a
-            href="https://www.linkedin.com/company/eqp-consulting-group"
-            target="_blank"
-            rel="noreferrer"
-          >
-            LinkedIn
           </a>
         </div>
 
