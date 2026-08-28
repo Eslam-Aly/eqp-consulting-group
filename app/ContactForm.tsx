@@ -3,8 +3,7 @@
 import { FormEvent, useRef, useState } from "react";
 
 const CONTACT_ENDPOINT =
-  process.env.NEXT_PUBLIC_CONTACT_ENDPOINT ??
-  "https://forms.eqpconsulting.com/contact.php";
+  process.env.NEXT_PUBLIC_CONTACT_ENDPOINT ?? "/api/contact";
 
 type SubmissionState = "idle" | "sending" | "success" | "error";
 
