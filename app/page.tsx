@@ -244,13 +244,13 @@ export default function Home() {
             impulsan <em>resultados.</em>
           </h1>
           <p className="hero-lede">
-            Ayudamos a organizaciones en Panamá y Latinoamérica a convertir la
-            calidad, la seguridad y la eficiencia en una ventaja competitiva.
+            Ayudamos a organizaciones en todo el mundo a convertir la calidad,
+            la seguridad y la eficiencia en una ventaja competitiva.
           </p>
           <div className="hero-proof">
             <span>Experiencia especializada</span>
             <b>Consultoría presencial y online</b>
-            <b>Panamá · Latinoamérica</b>
+            <b>Alcance global</b>
           </div>
           <div className="hero-actions">
             <a className="button button-primary" href="#contacto">
