@@ -752,6 +752,43 @@ h2 em {
   font-size: 10px;
   text-align: center;
 }
+.contact-submit {
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+}
+.contact-submit:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+.form-honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.form-status {
+  margin: -6px 0 0;
+  padding: 11px 13px;
+  border-radius: 4px;
+  font-size: 13px;
+  line-height: 1.45;
+  text-align: center;
+}
+.form-status--sending {
+  color: var(--muted);
+  background: #eef4f6;
+}
+.form-status--success {
+  color: #065d86;
+  background: #e5f7fa;
+}
+.form-status--error {
+  color: #8f2525;
+  background: #fff0f0;
+}
 footer {
   padding: 62px max(6vw, 36px) 32px;
   display: grid;
