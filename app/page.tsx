@@ -1,6 +1,5 @@
 import {
   FaEnvelope,
-  FaGlobeAmericas,
   FaLinkedin,
   FaMapMarkerAlt,
   FaPhoneAlt,
@@ -576,66 +575,74 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="footer-contact-list" aria-label="Datos de contacto">
-          <a
-            href="https://www.linkedin.com/company/eqp-consulting-group"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <span className="footer-contact-icon" aria-hidden="true">
-              <FaLinkedin />
-            </span>
-            <span>
-              <small>LinkedIn</small>
-              EQP Consulting Group
-            </span>
-          </a>
-          <div className="footer-contact-cluster">
-            <span className="footer-contact-icon" aria-hidden="true">
-              <FaPhoneAlt />
-            </span>
-            <span>
-              <small>Panamá · Oficina principal</small>
-              <span className="footer-inline-links">
-                <a href="tel:+5078318353">+507 831-8353</a>
-                <a href="tel:+50767199642">+507 6719-9642</a>
-              </span>
-            </span>
-          </div>
-          <a href="mailto:info@eqpconsulting.com">
-            <span className="footer-contact-icon" aria-hidden="true">
-              <FaEnvelope />
-            </span>
-            <span>
-              <small>Email</small>
-              info@eqpconsulting.com
-            </span>
-          </a>
-          <div className="footer-contact-cluster">
-            <span className="footer-contact-icon" aria-hidden="true">
-              <FaMapMarkerAlt />
-            </span>
-            <span>
-              <small>Sede</small>
-              Ciudad de Panamá, Panamá
-            </span>
-          </div>
-          <div className="footer-contact-cluster footer-contact-cluster--global">
-            <span className="footer-contact-icon" aria-hidden="true">
-              <FaGlobeAmericas />
-            </span>
-            <span>
-              <small>Atención internacional</small>
-              <span className="footer-region-links">
-                {internationalContacts.map((contact) => (
-                  <a href={contact.href} key={contact.location}>
-                    <b>{contact.location}</b>
+        <div className="footer-contact-columns" aria-label="Datos de contacto">
+          <section className="footer-contact-column" aria-labelledby="footer-panama">
+            <h3 id="footer-panama"><span>01</span> Panamá</h3>
+            <p className="footer-contact-subtitle">Oficina principal</p>
+            <div className="footer-contact-list">
+              <div className="footer-contact-cluster">
+                <span className="footer-contact-icon" aria-hidden="true">
+                  <FaPhoneAlt />
+                </span>
+                <span>
+                  <small>Teléfonos</small>
+                  <span className="footer-inline-links">
+                    <a href="tel:+5078318353">+507 831-8353</a>
+                    <a href="tel:+50767199642">+507 6719-9642</a>
+                  </span>
+                </span>
+              </div>
+              <a href="mailto:info@eqpconsulting.com">
+                <span className="footer-contact-icon" aria-hidden="true">
+                  <FaEnvelope />
+                </span>
+                <span>
+                  <small>Email</small>
+                  info@eqpconsulting.com
+                </span>
+              </a>
+              <div className="footer-contact-cluster">
+                <span className="footer-contact-icon" aria-hidden="true">
+                  <FaMapMarkerAlt />
+                </span>
+                <span>
+                  <small>Sede</small>
+                  Ciudad de Panamá, Panamá
+                </span>
+              </div>
+              <a
+                href="https://www.linkedin.com/company/eqp-consulting-group"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span className="footer-contact-icon" aria-hidden="true">
+                  <FaLinkedin />
+                </span>
+                <span>
+                  <small>LinkedIn</small>
+                  EQP Consulting Group
+                </span>
+              </a>
+            </div>
+          </section>
+
+          <section className="footer-contact-column" aria-labelledby="footer-global">
+            <h3 id="footer-global"><span>02</span> Internacional</h3>
+            <p className="footer-contact-subtitle">Atención global</p>
+            <div className="footer-contact-list footer-contact-list--international">
+              {internationalContacts.map((contact) => (
+                <a href={contact.href} key={contact.location}>
+                  <span className="footer-contact-icon" aria-hidden="true">
+                    <FaPhoneAlt />
+                  </span>
+                  <span>
+                    <small>{contact.location}</small>
                     {contact.phone}
-                  </a>
-                ))}
-              </span>
-            </span>
-          </div>
+                  </span>
+                </a>
+              ))}
+            </div>
+          </section>
         </div>
 
         <small className="footer-legal">
