@@ -1,4 +1,10 @@
-import { FaEnvelope, FaLinkedin, FaPhoneAlt } from "react-icons/fa";
+import {
+  FaEnvelope,
+  FaGlobeAmericas,
+  FaLinkedin,
+  FaMapMarkerAlt,
+  FaPhoneAlt,
+} from "react-icons/fa";
 import ContactForm from "./ContactForm";
 
 const services = [
@@ -146,6 +152,29 @@ const leadershipTeam = [
     image: "/team/leadership/eslam-aly.png",
     name: "Eslam Aly",
     role: "Director of Digital Transformation & AI Solutions",
+  },
+];
+
+const internationalContacts = [
+  {
+    location: "Estados Unidos",
+    phone: "+1 (800) 295-7053",
+    href: "tel:+18002957053",
+  },
+  {
+    location: "Berlín, Alemania",
+    phone: "+49 176 2424 3790",
+    href: "tel:+4917624243790",
+  },
+  {
+    location: "Madrid, España",
+    phone: "+34 613 849 845",
+    href: "tel:+34613849845",
+  },
+  {
+    location: "Kiev, Ucrania",
+    phone: "+380 96 213 1304",
+    href: "tel:+380962131304",
   },
 ];
 
@@ -507,15 +536,30 @@ export default function Home() {
             sin compromiso.
           </p>
           <div className="contact-details">
-            <a href="tel:+5078318353">
-              <span>Teléfono</span>+507 831-8353
-            </a>
+            <div className="contact-detail-group">
+              <span>Panamá · Oficina principal</span>
+              <a href="tel:+5078318353">+507 831-8353</a>
+              <a href="tel:+50767199642">+507 6719-9642</a>
+            </div>
             <a href="mailto:info@eqpconsulting.com">
               <span>Email</span>info@eqpconsulting.com
             </a>
             <p>
-              <span>Ubicación</span>Ciudad de Panamá, Panamá
+              <span>Sede</span>Ciudad de Panamá, Panamá
             </p>
+          </div>
+          <div className="international-directory">
+            <p className="international-directory-title">
+              Atención internacional
+            </p>
+            <div className="international-directory-grid">
+              {internationalContacts.map((contact) => (
+                <a href={contact.href} key={contact.location}>
+                  <span>{contact.location}</span>
+                  {contact.phone}
+                </a>
+              ))}
+            </div>
           </div>
         </div>
         <ContactForm />
@@ -546,15 +590,18 @@ export default function Home() {
               EQP Consulting Group
             </span>
           </a>
-          <a href="tel:+5078318353">
+          <div className="footer-contact-cluster">
             <span className="footer-contact-icon" aria-hidden="true">
               <FaPhoneAlt />
             </span>
             <span>
-              <small>Teléfono</small>
-              +507 831-8353
+              <small>Panamá · Oficina principal</small>
+              <span className="footer-inline-links">
+                <a href="tel:+5078318353">+507 831-8353</a>
+                <a href="tel:+50767199642">+507 6719-9642</a>
+              </span>
             </span>
-          </a>
+          </div>
           <a href="mailto:info@eqpconsulting.com">
             <span className="footer-contact-icon" aria-hidden="true">
               <FaEnvelope />
@@ -564,6 +611,31 @@ export default function Home() {
               info@eqpconsulting.com
             </span>
           </a>
+          <div className="footer-contact-cluster">
+            <span className="footer-contact-icon" aria-hidden="true">
+              <FaMapMarkerAlt />
+            </span>
+            <span>
+              <small>Sede</small>
+              Ciudad de Panamá, Panamá
+            </span>
+          </div>
+          <div className="footer-contact-cluster footer-contact-cluster--global">
+            <span className="footer-contact-icon" aria-hidden="true">
+              <FaGlobeAmericas />
+            </span>
+            <span>
+              <small>Atención internacional</small>
+              <span className="footer-region-links">
+                {internationalContacts.map((contact) => (
+                  <a href={contact.href} key={contact.location}>
+                    <b>{contact.location}</b>
+                    {contact.phone}
+                  </a>
+                ))}
+              </span>
+            </span>
+          </div>
         </div>
 
         <small className="footer-legal">

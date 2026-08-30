@@ -697,7 +697,8 @@ h2 em {
   margin-top: 45px;
 }
 .contact-details a,
-.contact-details p {
+.contact-details p,
+.contact-detail-group {
   margin: 0;
   font-size: 14px;
 }
@@ -708,6 +709,51 @@ h2 em {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 5px;
+}
+.contact-detail-group {
+  display: grid;
+  gap: 3px;
+}
+.contact-detail-group > span {
+  margin-bottom: 2px;
+}
+.contact-detail-group a,
+.international-directory a {
+  color: #fff;
+  transition: color 0.2s ease;
+}
+.contact-detail-group a:hover,
+.international-directory a:hover {
+  color: var(--lime);
+}
+.international-directory {
+  margin-top: 34px;
+  padding-top: 25px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+.international-directory-title {
+  margin: 0 0 17px;
+  color: #8199a6;
+  font: 700 10px "Manrope";
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.international-directory-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px 30px;
+}
+.international-directory-grid a {
+  font-size: 13px;
+  line-height: 1.45;
+}
+.international-directory-grid span {
+  display: block;
+  margin-bottom: 3px;
+  color: #777f92;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 .contact-form {
   background: #fff;
@@ -818,7 +864,8 @@ footer {
   gap: 16px;
 }
 .footer-contact-list > p,
-.footer-contact-list > a {
+.footer-contact-list > a,
+.footer-contact-cluster {
   display: grid;
   grid-template-columns: 38px minmax(0, 1fr);
   align-items: center;
@@ -856,6 +903,34 @@ footer {
 }
 .footer-contact-list > a:hover .footer-contact-icon {
   border-color: var(--lime);
+}
+.footer-inline-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+}
+.footer-inline-links a,
+.footer-region-links a {
+  color: #dce8ed;
+}
+.footer-inline-links a:hover,
+.footer-region-links a:hover {
+  color: #fff;
+}
+.footer-region-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 26px;
+}
+.footer-region-links a {
+  display: grid;
+  gap: 2px;
+}
+.footer-region-links b {
+  color: #8199a6;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
 }
 .footer-legal {
   grid-column: 1/-1;
@@ -1062,6 +1137,10 @@ footer {
     font-size: 43px;
   }
   .contact-details {
+    grid-template-columns: 1fr;
+  }
+  .international-directory-grid,
+  .footer-region-links {
     grid-template-columns: 1fr;
   }
   .contact-form {

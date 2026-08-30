@@ -5,6 +5,8 @@ const siteUrl = "https://eqpconsulting.com";
 const siteTitle = "EQP Consulting | Consultoría ISO y Excelencia Empresarial";
 const siteDescription =
   "Consultoría ISO, capacitación empresarial y mejora continua para organizaciones en todo el mundo. Sistemas de gestión que impulsan resultados.";
+const socialImageUrl =
+  "https://eqp-consulting-group.vercel.app/og-eqp-blue.png";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -36,14 +38,19 @@ export const metadata: Metadata = {
     title: siteTitle,
     description: siteDescription,
     images: [
-      { url: "/og.png", width: 1200, height: 630, alt: "EQP Consulting" },
+      {
+        url: socialImageUrl,
+        width: 1200,
+        height: 630,
+        alt: "EQP Consulting — Sistemas que impulsan resultados",
+      },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: siteTitle,
     description: siteDescription,
-    images: ["/og.png"],
+    images: [socialImageUrl],
   },
   formatDetection: {
     email: false,
@@ -60,10 +67,15 @@ const organizationJsonLd = {
   alternateName: "EQP Consulting",
   url: siteUrl,
   logo: `${siteUrl}/eqp-logo-blue.png`,
-  image: `${siteUrl}/og.png`,
+  image: socialImageUrl,
   description: siteDescription,
   email: "info@eqpconsulting.com",
   telephone: "+507 831-8353",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Ciudad de Panamá",
+    addressCountry: "PA",
+  },
   sameAs: ["https://www.linkedin.com/company/eqp-consulting-group"],
   areaServed: "Worldwide",
   knowsAbout: [
@@ -75,14 +87,51 @@ const organizationJsonLd = {
     "Mejora continua",
     "Transformación digital",
   ],
-  contactPoint: {
-    "@type": "ContactPoint",
-    telephone: "+507 831-8353",
-    email: "info@eqpconsulting.com",
-    contactType: "customer service",
-    areaServed: "Worldwide",
-    availableLanguage: ["Spanish", "English"],
-  },
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      telephone: "+507 831-8353",
+      email: "info@eqpconsulting.com",
+      contactType: "customer service",
+      areaServed: "Worldwide",
+      availableLanguage: ["Spanish", "English"],
+    },
+    {
+      "@type": "ContactPoint",
+      telephone: "+507 6719-9642",
+      contactType: "customer service",
+      areaServed: "Panama",
+      availableLanguage: ["Spanish", "English"],
+    },
+    {
+      "@type": "ContactPoint",
+      telephone: "+1 800 295 7053",
+      contactType: "customer service",
+      areaServed: "United States",
+      availableLanguage: ["English", "Spanish"],
+    },
+    {
+      "@type": "ContactPoint",
+      telephone: "+49 176 2424 3790",
+      contactType: "customer service",
+      areaServed: "Germany",
+      availableLanguage: ["English", "Spanish"],
+    },
+    {
+      "@type": "ContactPoint",
+      telephone: "+34 613 849 845",
+      contactType: "customer service",
+      areaServed: "Spain",
+      availableLanguage: ["Spanish", "English"],
+    },
+    {
+      "@type": "ContactPoint",
+      telephone: "+380 96 213 1304",
+      contactType: "customer service",
+      areaServed: "Ukraine",
+      availableLanguage: ["English", "Spanish"],
+    },
+  ],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Servicios de consultoría y capacitación",
