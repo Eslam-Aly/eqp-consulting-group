@@ -6,7 +6,7 @@ const siteTitle = "EQP Consulting | Consultoría ISO y Excelencia Empresarial";
 const siteDescription =
   "Consultoría ISO, capacitación empresarial y mejora continua para organizaciones en todo el mundo. Sistemas de gestión que impulsan resultados.";
 const socialImageUrl =
-  "https://eqp-consulting-group.vercel.app/og-eqp-dark-blue.png";
+  "https://eqp-consulting-group.vercel.app/og-eqp-live-colors.png";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
