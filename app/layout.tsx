@@ -172,6 +172,29 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="es">
+      <head>
+        <link
+          rel="preload"
+          as="image"
+          href="/hero-process.webp"
+          type="image/webp"
+          fetchPriority="high"
+        />
+        <link
+          rel="preload"
+          href="/fonts/dm-sans-latin.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/manrope-latin.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body>
         <script
           type="application/ld+json"

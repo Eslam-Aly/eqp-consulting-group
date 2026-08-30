@@ -128,27 +128,37 @@ const standards = [
 
 const leadershipTeam = [
   {
-    image: "/team/leadership/emigdio-quintero.png",
+    image: "/team/leadership/emigdio-quintero.webp",
+    width: 900,
+    height: 978,
     name: "Emigdio Quintero",
     role: "Managing Director",
   },
   {
-    image: "/team/leadership/isaac-de-leon.png",
+    image: "/team/leadership/isaac-de-leon.webp",
+    width: 900,
+    height: 1125,
     name: "Isaac De León",
     role: "Director of Business Excellence & Supply Chain Solutions",
   },
   {
-    image: "/team/leadership/angelica-ospino.png",
+    image: "/team/leadership/angelica-ospino.webp",
+    width: 900,
+    height: 1125,
     name: "Angelica Ospino",
     role: "Director of Operational Excellence",
   },
   {
-    image: "/team/leadership/eduardo-candanedo.png",
+    image: "/team/leadership/eduardo-candanedo.webp",
+    width: 900,
+    height: 1125,
     name: "Eduardo Candanedo",
     role: "Director of Logistics & International Trade",
   },
   {
-    image: "/team/leadership/eslam-aly.png",
+    image: "/team/leadership/eslam-aly.webp",
+    width: 900,
+    height: 879,
     name: "Eslam Aly",
     role: "Director of Digital Transformation & AI Solutions",
   },
@@ -247,7 +257,14 @@ export default function Home() {
     <main>
       <header className="site-header">
         <a className="brand" href="#inicio" aria-label="EQP Consulting, inicio">
-          <img src="/eqp-logo-blue.png" alt="EQP Consulting Group" />
+          <img
+            src="/eqp-logo-blue.webp"
+            alt="EQP Consulting Group"
+            width={480}
+            height={212}
+            fetchPriority="high"
+            decoding="async"
+          />
         </a>
         <nav aria-label="Navegación principal">
           <a href="#nosotros">Nosotros</a>
@@ -468,7 +485,10 @@ export default function Home() {
                 <img
                   src={member.image}
                   alt={`${member.name}, ${member.role}`}
+                  width={member.width}
+                  height={member.height}
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="leadership-card-copy">
@@ -567,7 +587,14 @@ export default function Home() {
       <footer>
         <div className="footer-brand-block">
           <a className="brand dark" href="#inicio">
-            <img src="/eqp-logo-blue.png" alt="EQP Consulting Group" />
+            <img
+              src="/eqp-logo-blue.webp"
+              alt="EQP Consulting Group"
+              width={480}
+              height={212}
+              loading="lazy"
+              decoding="async"
+            />
           </a>
           <p>
             Consultoría y capacitación para organizaciones que quieren mejorar

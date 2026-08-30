@@ -1,5 +1,20 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap");
 @import "tailwindcss";
+
+@font-face {
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("/fonts/dm-sans-latin.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url("/fonts/manrope-latin.woff2") format("woff2");
+}
 
 :root {
   --navy: #042f48;
@@ -91,7 +106,7 @@ textarea {
       rgba(4, 47, 72, 0.22) 70%,
       rgba(4, 47, 72, 0.05) 100%
     ),
-    url("/hero-process.png");
+    url("/hero-process.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1039,7 +1054,7 @@ footer {
         rgba(14, 17, 34, 0.88) 58%,
         rgba(14, 17, 34, 0.3) 100%
       ),
-      url("/hero-process.png");
+      url("/hero-process.webp");
     background-position: 68% center;
   }
   .hero-copy {
