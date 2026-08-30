@@ -156,14 +156,14 @@ const leadershipTeam = [
 
 const internationalContacts = [
   {
-    location: "Estados Unidos",
-    phone: "+1 (800) 295-7053",
-    href: "tel:+18002957053",
-  },
-  {
     location: "Berlín, Alemania",
     phone: "+49 176 2424 3790",
     href: "tel:+4917624243790",
+  },
+  {
+    location: "Estados Unidos",
+    phone: "+1 (800) 295-7053",
+    href: "tel:+18002957053",
   },
   {
     location: "Madrid, España",

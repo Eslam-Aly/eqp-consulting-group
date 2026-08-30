@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-const siteUrl = "https://eqpconsulting.com";
+const siteUrl = "https://www.eqpconsulting.com";
 const siteTitle = "EQP Consulting | Consultoría ISO y Excelencia Empresarial";
 const siteDescription =
   "Consultoría ISO, capacitación empresarial y mejora continua para organizaciones en todo el mundo. Sistemas de gestión que impulsan resultados.";
@@ -105,16 +105,16 @@ const organizationJsonLd = {
     },
     {
       "@type": "ContactPoint",
-      telephone: "+1 800 295 7053",
+      telephone: "+49 176 2424 3790",
       contactType: "customer service",
-      areaServed: "United States",
+      areaServed: "Germany",
       availableLanguage: ["English", "Spanish"],
     },
     {
       "@type": "ContactPoint",
-      telephone: "+49 176 2424 3790",
+      telephone: "+1 800 295 7053",
       contactType: "customer service",
-      areaServed: "Germany",
+      areaServed: "United States",
       availableLanguage: ["English", "Spanish"],
     },
     {

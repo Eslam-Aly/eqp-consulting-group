@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: https://eqpconsulting.com/sitemap.xml
+Sitemap: https://www.eqpconsulting.com/sitemap.xml
