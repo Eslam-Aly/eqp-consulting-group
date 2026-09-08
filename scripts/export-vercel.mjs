@@ -43,5 +43,10 @@ for (const route of routes) {
   const routeDirectory =
     route === "/" ? outputDirectory : new URL(`.${route}/`, outputDirectory);
   await mkdir(routeDirectory, { recursive: true });
-  await writeFile(new URL("index.html", routeDirectory), await response.text());
+  const renderedHtml = await response.text();
+  const localizedHtml =
+    route === "/en"
+      ? renderedHtml.replace('<html lang="es">', '<html lang="en">')
+      : renderedHtml;
+  await writeFile(new URL("index.html", routeDirectory), localizedHtml);
 }
