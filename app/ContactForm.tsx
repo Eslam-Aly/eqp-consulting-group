@@ -7,7 +7,52 @@ const CONTACT_ENDPOINT =
 
 type SubmissionState = "idle" | "sending" | "success" | "error";
 
-export default function ContactForm() {
+const formCopy = {
+  es: {
+    sending: "Enviando tu consulta…",
+    error: "No pudimos enviar tu consulta. Inténtalo nuevamente.",
+    success:
+      "Tu consulta fue enviada. Nuestro equipo se pondrá en contacto contigo.",
+    name: "Nombre",
+    namePlaceholder: "Tu nombre",
+    company: "Empresa",
+    companyPlaceholder: "Nombre de empresa",
+    help: "¿En qué podemos ayudarte?",
+    selectService: "Selecciona un servicio",
+    isoConsulting: "Consultoría ISO",
+    training: "Capacitación",
+    management: "Gestión y productividad",
+    other: "Otro",
+    message: "Mensaje",
+    messagePlaceholder: "Cuéntanos brevemente sobre tu objetivo...",
+    website: "Sitio web",
+    submit: "Enviar consulta",
+    consent: "Al enviar aceptas ser contactado por EQP Consulting.",
+  },
+  en: {
+    sending: "Sending your inquiry…",
+    error: "We could not send your inquiry. Please try again.",
+    success: "Your inquiry was sent. Our team will contact you shortly.",
+    name: "Name",
+    namePlaceholder: "Your name",
+    company: "Company",
+    companyPlaceholder: "Company name",
+    help: "How can we help?",
+    selectService: "Select a service",
+    isoConsulting: "ISO consulting",
+    training: "Corporate training",
+    management: "Management and productivity",
+    other: "Other",
+    message: "Message",
+    messagePlaceholder: "Tell us briefly about your objective...",
+    website: "Website",
+    submit: "Send inquiry",
+    consent: "By submitting, you agree to be contacted by EQP Consulting.",
+  },
+} as const;
+
+export default function ContactForm({ locale = "es" }: { locale?: "es" | "en" }) {
+  const copy = formCopy[locale];
   const [submissionState, setSubmissionState] =
     useState<SubmissionState>("idle");
   const [statusMessage, setStatusMessage] = useState("");
@@ -26,7 +71,7 @@ export default function ContactForm() {
     const formData = new FormData(form);
 
     setSubmissionState("sending");
-    setStatusMessage("Enviando tu consulta…");
+    setStatusMessage(copy.sending);
 
     try {
       const response = await fetch(CONTACT_ENDPOINT, {
@@ -48,25 +93,21 @@ export default function ContactForm() {
         | null;
 
       if (!response.ok) {
-        throw new Error(
-          result?.message ??
-            "No pudimos enviar tu consulta. Inténtalo nuevamente.",
-        );
+        throw new Error(locale === "es" ? result?.message ?? copy.error : copy.error);
       }
 
       form.reset();
       startedAt.current = Date.now();
       setSubmissionState("success");
       setStatusMessage(
-        result?.message ??
-          "Tu consulta fue enviada. Nuestro equipo se pondrá en contacto contigo.",
+        locale === "es" ? result?.message ?? copy.success : copy.success,
       );
     } catch (error) {
       setSubmissionState("error");
       setStatusMessage(
         error instanceof Error
           ? error.message
-          : "No pudimos enviar tu consulta. Inténtalo nuevamente.",
+          : copy.error,
       );
     }
   }
@@ -75,23 +116,23 @@ export default function ContactForm() {
     <form className="contact-form" onSubmit={handleSubmit}>
       <div className="field-row">
         <label>
-          Nombre
+          {copy.name}
           <input
             name="nombre"
             required
             minLength={2}
             maxLength={100}
             autoComplete="name"
-            placeholder="Tu nombre"
+            placeholder={copy.namePlaceholder}
           />
         </label>
         <label>
-          Empresa
+          {copy.company}
           <input
             name="empresa"
             maxLength={120}
             autoComplete="organization"
-            placeholder="Nombre de empresa"
+            placeholder={copy.companyPlaceholder}
           />
         </label>
       </div>
@@ -109,33 +150,33 @@ export default function ContactForm() {
       </label>
 
       <label>
-        ¿En qué podemos ayudarte?
+        {copy.help}
         <select name="servicio" defaultValue="" required>
           <option value="" disabled>
-            Selecciona un servicio
+            {copy.selectService}
           </option>
-          <option>Consultoría ISO</option>
-          <option>Capacitación</option>
-          <option>Gestión y productividad</option>
-          <option>Otro</option>
+          <option value="Consultoría ISO">{copy.isoConsulting}</option>
+          <option value="Capacitación">{copy.training}</option>
+          <option value="Gestión y productividad">{copy.management}</option>
+          <option value="Otro">{copy.other}</option>
         </select>
       </label>
 
       <label>
-        Mensaje
+        {copy.message}
         <textarea
           name="mensaje"
           rows={4}
           required
           minLength={10}
           maxLength={3000}
-          placeholder="Cuéntanos brevemente sobre tu objetivo..."
+          placeholder={copy.messagePlaceholder}
         />
       </label>
 
       <div className="form-honeypot" aria-hidden="true">
         <label>
-          Sitio web
+          {copy.website}
           <input name="website" tabIndex={-1} autoComplete="off" />
         </label>
       </div>
@@ -145,7 +186,7 @@ export default function ContactForm() {
         type="submit"
         disabled={submissionState === "sending"}
       >
-        {submissionState === "sending" ? "Enviando…" : "Enviar consulta"}
+        {submissionState === "sending" ? copy.sending : copy.submit}
       </button>
 
       {submissionState !== "idle" ? (
@@ -158,7 +199,7 @@ export default function ContactForm() {
         </p>
       ) : null}
 
-      <small>Al enviar aceptas ser contactado por EQP Consulting.</small>
+      <small>{copy.consent}</small>
     </form>
   );
 }

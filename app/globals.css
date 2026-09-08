@@ -86,6 +86,28 @@ textarea {
   opacity: 1;
   color: var(--lime);
 }
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: rgba(255, 255, 255, 0.42);
+  font: 700 11px "Manrope";
+  letter-spacing: 0.08em;
+}
+.language-switcher a {
+  color: rgba(255, 255, 255, 0.62);
+  padding: 8px 2px;
+  transition: color 0.2s ease;
+}
+.language-switcher a:hover,
+.language-switcher a[aria-current="page"] {
+  color: var(--lime);
+}
 .nav-cta {
   border: 1px solid rgba(255, 255, 255, 0.3);
   padding: 11px 17px;
@@ -963,6 +985,12 @@ footer {
   font-size: 10px;
 }
 @media (max-width: 1200px) {
+  .site-header {
+    padding-inline: 28px;
+  }
+  .site-header nav {
+    gap: 18px;
+  }
   .leadership-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -1043,6 +1071,13 @@ footer {
   .nav-cta {
     font-size: 11px;
     padding: 9px;
+  }
+  .header-actions {
+    gap: 9px;
+  }
+  .language-switcher {
+    gap: 5px;
+    font-size: 10px;
   }
   .hero {
     padding: 120px 22px 40px;

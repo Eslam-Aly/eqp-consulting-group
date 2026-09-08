@@ -4,28 +4,51 @@ import {
   FaMapMarkerAlt,
   FaPhoneAlt,
 } from "react-icons/fa";
+import Link from "next/link";
 import ContactForm from "./ContactForm";
 
-const services = [
-  {
-    number: "01",
-    title: "Consultoría ISO",
-    text: "Diseñamos e implementamos sistemas de gestión alineados con ISO 9001, ISO 13485 e ISO 45001, desde el diagnóstico hasta la certificación.",
-    tags: ["Diagnóstico", "Implementación", "Auditoría"],
-  },
-  {
-    number: "02",
-    title: "Capacitación empresarial",
-    text: "Convertimos los requisitos de las normas en conocimiento práctico para que cada equipo pueda sostener y mejorar su sistema.",
-    tags: ["Cursos in-company", "E-learning", "Talleres"],
-  },
-  {
-    number: "03",
-    title: "Gestión y productividad",
-    text: "Optimizamos procesos, indicadores y controles para reducir costos, elevar el desempeño y mejorar la experiencia del cliente.",
-    tags: ["Procesos", "KPIs", "Mejora continua"],
-  },
-];
+const servicesByLocale = {
+  es: [
+    {
+      number: "01",
+      title: "Consultoría ISO",
+      text: "Diseñamos e implementamos sistemas de gestión alineados con ISO 9001, ISO 13485 e ISO 45001, desde el diagnóstico hasta la certificación.",
+      tags: ["Diagnóstico", "Implementación", "Auditoría"],
+    },
+    {
+      number: "02",
+      title: "Capacitación empresarial",
+      text: "Convertimos los requisitos de las normas en conocimiento práctico para que cada equipo pueda sostener y mejorar su sistema.",
+      tags: ["Cursos in-company", "E-learning", "Talleres"],
+    },
+    {
+      number: "03",
+      title: "Gestión y productividad",
+      text: "Optimizamos procesos, indicadores y controles para reducir costos, elevar el desempeño y mejorar la experiencia del cliente.",
+      tags: ["Procesos", "KPIs", "Mejora continua"],
+    },
+  ],
+  en: [
+    {
+      number: "01",
+      title: "ISO consulting",
+      text: "We design and implement management systems aligned with ISO 9001, ISO 13485 and ISO 45001, from initial assessment through certification.",
+      tags: ["Assessment", "Implementation", "Audit"],
+    },
+    {
+      number: "02",
+      title: "Corporate training",
+      text: "We turn standards requirements into practical knowledge so every team can sustain and continuously improve its management system.",
+      tags: ["In-company courses", "E-learning", "Workshops"],
+    },
+    {
+      number: "03",
+      title: "Management and productivity",
+      text: "We optimize processes, indicators and controls to reduce costs, improve performance and elevate the customer experience.",
+      tags: ["Processes", "KPIs", "Continuous improvement"],
+    },
+  ],
+} as const;
 
 const standards = [
   "ISO 9001",
@@ -164,28 +187,52 @@ const leadershipTeam = [
   },
 ];
 
-const internationalContacts = [
-  {
-    location: "Berlín, Alemania",
-    phone: "+49 176 2424 3790",
-    href: "tel:+4917624243790",
-  },
-  {
-    location: "Estados Unidos",
-    phone: "+1 (800) 295-7053",
-    href: "tel:+18002957053",
-  },
-  {
-    location: "Madrid, España",
-    phone: "+34 613 849 845",
-    href: "tel:+34613849845",
-  },
-  {
-    location: "Kiev, Ucrania",
-    phone: "+380 96 213 1304",
-    href: "tel:+380962131304",
-  },
-];
+const internationalContactsByLocale = {
+  es: [
+    {
+      location: "Berlín, Alemania",
+      phone: "+49 176 2424 3790",
+      href: "tel:+4917624243790",
+    },
+    {
+      location: "Estados Unidos",
+      phone: "+1 (800) 295-7053",
+      href: "tel:+18002957053",
+    },
+    {
+      location: "Madrid, España",
+      phone: "+34 613 849 845",
+      href: "tel:+34613849845",
+    },
+    {
+      location: "Kiev, Ucrania",
+      phone: "+380 96 213 1304",
+      href: "tel:+380962131304",
+    },
+  ],
+  en: [
+    {
+      location: "Berlin, Germany",
+      phone: "+49 176 2424 3790",
+      href: "tel:+4917624243790",
+    },
+    {
+      location: "United States",
+      phone: "+1 (800) 295-7053",
+      href: "tel:+18002957053",
+    },
+    {
+      location: "Madrid, Spain",
+      phone: "+34 613 849 845",
+      href: "tel:+34613849845",
+    },
+    {
+      location: "Kyiv, Ukraine",
+      phone: "+380 96 213 1304",
+      href: "tel:+380962131304",
+    },
+  ],
+} as const;
 
 const clients = [
   {
@@ -252,11 +299,195 @@ const clients = [
   },
 ];
 
-export default function Home() {
+type Locale = "es" | "en";
+
+const copyByLocale = {
+  es: {
+    brandHome: "EQP Consulting, inicio",
+    navigationLabel: "Navegación principal",
+    languageLabel: "Seleccionar idioma",
+    nav: ["Nosotros", "Servicios", "Método", "Equipo", "Clientes", "Contacto"],
+    navCta: "Diagnóstico gratis",
+    eyebrow: "Consultoría & capacitación ISO",
+    heroLine1: "Sistemas que",
+    heroLine2: "impulsan",
+    heroAccent: "resultados.",
+    heroLede:
+      "Ayudamos a organizaciones en todo el mundo a convertir la calidad, la seguridad y la eficiencia en una ventaja competitiva.",
+    proof: [
+      "Experiencia especializada",
+      "Consultoría presencial y online",
+      "Alcance global",
+    ],
+    requestAssessment: "Solicitar diagnóstico",
+    exploreServices: "Explorar servicios",
+    standardsLabel: "Áreas de especialidad",
+    aboutKicker: "QUIÉNES SOMOS",
+    aboutTitle: "La mejora no ocurre por accidente.",
+    aboutAccent: "Se diseña.",
+    aboutLead:
+      "Somos especialistas en consultoría y capacitación para la gestión empresarial. Unimos conocimiento normativo, experiencia operativa y una forma muy humana de acompañar el cambio.",
+    aboutBody:
+      "Nuestro objetivo no es entregar documentos: es construir sistemas simples, adoptados por las personas y conectados con los resultados de la organización.",
+    approachLink: "Conoce nuestro enfoque",
+    stats: [
+      "Visión integral del negocio",
+      "Modalidades: presencial, online e in-company",
+      "Socio durante todo el proceso",
+    ],
+    servicesKicker: "QUÉ HACEMOS",
+    servicesTitle: "Experiencia que se convierte",
+    servicesAccent: "en acción.",
+    serviceAria: "Consultar sobre",
+    methodKicker: "CÓMO TRABAJAMOS",
+    methodTitle: "De la brecha",
+    methodAccent: "al desempeño.",
+    methodBody:
+      "Un camino claro, adaptado a la realidad de tu organización y medido con resultados concretos.",
+    startNow: "Empezar ahora",
+    steps: [
+      ["Diagnosticar", "Entendemos tu contexto, objetivos, procesos y brechas."],
+      ["Diseñar", "Creamos una hoja de ruta simple, priorizada y viable."],
+      ["Implementar", "Trabajamos junto al equipo, transfiriendo capacidades."],
+      ["Mejorar", "Medimos, auditamos y afinamos para sostener el avance."],
+    ],
+    teamKicker: "NUESTRO EQUIPO",
+    teamTitle: "Liderazgo que convierte",
+    teamAccent: "visión en resultados.",
+    teamBody:
+      "Nuestro equipo directivo reúne experiencia en excelencia empresarial, operaciones, logística, transformación digital y soluciones de inteligencia artificial.",
+    leadershipLabel: "Equipo directivo",
+    leadershipBody: "Una visión compartida desde cinco áreas de especialidad.",
+    clientsKicker: "NUESTROS CLIENTES",
+    clientsTitle: "Confianza construida",
+    clientsAccent: "con resultados.",
+    clientsBody:
+      "Acompañamos a organizaciones públicas, privadas y multilaterales en la construcción de sistemas más sólidos, eficientes y sostenibles.",
+    clientsCount: "organizaciones que han confiado en nuestra experiencia",
+    contactKicker: "HABLEMOS",
+    contactLine1: "Tu próximo nivel",
+    contactLine2: "empieza con una",
+    contactAccent: "conversación.",
+    contactBody:
+      "Cuéntanos qué quieres mejorar. La primera evaluación es gratuita y sin compromiso.",
+    panamaOffice: "Panamá · Oficina principal",
+    email: "Email",
+    headquarters: "Sede",
+    panamaCity: "Ciudad de Panamá, Panamá",
+    internationalSupport: "Atención internacional",
+    footerDescription:
+      "Consultoría y capacitación para organizaciones que quieren mejorar de verdad.",
+    contactDetailsLabel: "Datos de contacto",
+    panama: "Panamá",
+    mainOffice: "Oficina principal",
+    phones: "Teléfonos",
+    international: "Internacional",
+    globalSupport: "Atención global",
+    legal: "© 2026 EQP Consulting. Todos los derechos reservados.",
+  },
+  en: {
+    brandHome: "EQP Consulting, home",
+    navigationLabel: "Main navigation",
+    languageLabel: "Select language",
+    nav: ["About", "Services", "Method", "Team", "Clients", "Contact"],
+    navCta: "Free assessment",
+    eyebrow: "ISO consulting & training",
+    heroLine1: "Systems that",
+    heroLine2: "drive",
+    heroAccent: "results.",
+    heroLede:
+      "We help organizations worldwide turn quality, safety and efficiency into a competitive advantage.",
+    proof: [
+      "Specialized expertise",
+      "On-site and online consulting",
+      "Global reach",
+    ],
+    requestAssessment: "Request an assessment",
+    exploreServices: "Explore services",
+    standardsLabel: "Areas of expertise",
+    aboutKicker: "WHO WE ARE",
+    aboutTitle: "Improvement does not happen by accident.",
+    aboutAccent: "It is designed.",
+    aboutLead:
+      "We specialize in management consulting and corporate training. We combine standards expertise, operational experience and a people-centered approach to guide change.",
+    aboutBody:
+      "Our goal is not to deliver documents: it is to build simple systems that people adopt and that connect directly to organizational results.",
+    approachLink: "Discover our approach",
+    stats: [
+      "A complete view of the business",
+      "Delivery modes: on-site, online and in-company",
+      "One partner throughout the entire process",
+    ],
+    servicesKicker: "WHAT WE DO",
+    servicesTitle: "Expertise transformed",
+    servicesAccent: "into action.",
+    serviceAria: "Ask about",
+    methodKicker: "HOW WE WORK",
+    methodTitle: "From the gap",
+    methodAccent: "to performance.",
+    methodBody:
+      "A clear path, tailored to your organization and measured through concrete results.",
+    startNow: "Get started",
+    steps: [
+      ["Assess", "We understand your context, objectives, processes and gaps."],
+      ["Design", "We create a simple, prioritized and achievable roadmap."],
+      ["Implement", "We work alongside your team and transfer capabilities."],
+      ["Improve", "We measure, audit and refine to sustain progress."],
+    ],
+    teamKicker: "OUR TEAM",
+    teamTitle: "Leadership that turns",
+    teamAccent: "vision into results.",
+    teamBody:
+      "Our leadership team brings together expertise in business excellence, operations, logistics, digital transformation and artificial intelligence solutions.",
+    leadershipLabel: "Leadership team",
+    leadershipBody: "One shared vision across five areas of expertise.",
+    clientsKicker: "OUR CLIENTS",
+    clientsTitle: "Trust built",
+    clientsAccent: "through results.",
+    clientsBody:
+      "We support public, private and multilateral organizations in building stronger, more efficient and sustainable systems.",
+    clientsCount: "organizations that have trusted our expertise",
+    contactKicker: "LET'S TALK",
+    contactLine1: "Your next level",
+    contactLine2: "starts with a",
+    contactAccent: "conversation.",
+    contactBody:
+      "Tell us what you want to improve. Your initial assessment is free and carries no obligation.",
+    panamaOffice: "Panama · Main office",
+    email: "Email",
+    headquarters: "Headquarters",
+    panamaCity: "Panama City, Panama",
+    internationalSupport: "International support",
+    footerDescription:
+      "Consulting and training for organizations committed to meaningful improvement.",
+    contactDetailsLabel: "Contact details",
+    panama: "Panama",
+    mainOffice: "Main office",
+    phones: "Phone numbers",
+    international: "International",
+    globalSupport: "Global support",
+    legal: "© 2026 EQP Consulting. All rights reserved.",
+  },
+} as const;
+
+const sectionIds = [
+  "nosotros",
+  "servicios",
+  "metodo",
+  "equipo",
+  "clientes",
+  "contacto",
+] as const;
+
+export function SitePage({ locale }: { locale: Locale }) {
+  const copy = copyByLocale[locale];
+  const services = servicesByLocale[locale];
+  const internationalContacts = internationalContactsByLocale[locale];
+
   return (
-    <main>
+    <main lang={locale}>
       <header className="site-header">
-        <a className="brand" href="#inicio" aria-label="EQP Consulting, inicio">
+        <a className="brand" href="#inicio" aria-label={copy.brandHome}>
           <img
             src="/eqp-logo-blue.webp"
             alt="EQP Consulting Group"
@@ -266,50 +497,67 @@ export default function Home() {
             decoding="async"
           />
         </a>
-        <nav aria-label="Navegación principal">
-          <a href="#nosotros">Nosotros</a>
-          <a href="#servicios">Servicios</a>
-          <a href="#metodo">Método</a>
-          <a href="#equipo">Equipo</a>
-          <a href="#clientes">Clientes</a>
-          <a href="#contacto">Contacto</a>
+        <nav aria-label={copy.navigationLabel}>
+          {copy.nav.map((label, index) => (
+            <a href={`#${sectionIds[index]}`} key={sectionIds[index]}>
+              {label}
+            </a>
+          ))}
         </nav>
-        <a className="nav-cta" href="#contacto">
-          Diagnóstico gratis
-        </a>
+        <div className="header-actions">
+          <div className="language-switcher" aria-label={copy.languageLabel}>
+            <Link
+              href="/"
+              hrefLang="es"
+              lang="es"
+              aria-current={locale === "es" ? "page" : undefined}
+            >
+              ES
+            </Link>
+            <span aria-hidden="true">/</span>
+            <Link
+              href="/en"
+              hrefLang="en"
+              lang="en"
+              aria-current={locale === "en" ? "page" : undefined}
+            >
+              EN
+            </Link>
+          </div>
+          <a className="nav-cta" href="#contacto">
+            {copy.navCta}
+          </a>
+        </div>
       </header>
 
       <section className="hero" id="inicio">
         <div className="hero-copy reveal">
           <p className="eyebrow">
-            <span /> Consultoría & capacitación ISO
+            <span /> {copy.eyebrow}
           </p>
           <h1>
-            Sistemas que
+            {copy.heroLine1}
             <br />
-            impulsan <em>resultados.</em>
+            {copy.heroLine2} <em>{copy.heroAccent}</em>
           </h1>
-          <p className="hero-lede">
-            Ayudamos a organizaciones en todo el mundo a convertir la calidad,
-            la seguridad y la eficiencia en una ventaja competitiva.
-          </p>
+          <p className="hero-lede">{copy.heroLede}</p>
           <div className="hero-proof">
-            <span>Experiencia especializada</span>
-            <b>Consultoría presencial y online</b>
-            <b>Alcance global</b>
+            <span>{copy.proof[0]}</span>
+            <b>{copy.proof[1]}</b>
+            <b>{copy.proof[2]}</b>
           </div>
           <div className="hero-actions">
             <a className="button button-primary" href="#contacto">
-              Solicitar diagnóstico
+              {copy.requestAssessment}
             </a>
             <a className="button button-secondary" href="#servicios">
-              Explorar servicios
+              {copy.exploreServices}
             </a>
           </div>
         </div>
       </section>
 
-      <div className="standards-strip" aria-label="Áreas de especialidad">
+      <div className="standards-strip" aria-label={copy.standardsLabel}>
         <div className="standards-track">
           {[0, 1].map((copy) => (
             <div
@@ -330,40 +578,32 @@ export default function Home() {
 
       <section className="section intro" id="nosotros">
         <div className="section-kicker">
-          <span>01</span> QUIÉNES SOMOS
+          <span>01</span> {copy.aboutKicker}
         </div>
         <div className="intro-grid">
           <h2>
-            La mejora no ocurre por accidente. <em>Se diseña.</em>
+            {copy.aboutTitle} <em>{copy.aboutAccent}</em>
           </h2>
           <div>
-            <p className="large-copy">
-              Somos especialistas en consultoría y capacitación para la gestión
-              empresarial. Unimos conocimiento normativo, experiencia operativa
-              y una forma muy humana de acompañar el cambio.
-            </p>
-            <p>
-              Nuestro objetivo no es entregar documentos: es construir sistemas
-              simples, adoptados por las personas y conectados con los
-              resultados de la organización.
-            </p>
+            <p className="large-copy">{copy.aboutLead}</p>
+            <p>{copy.aboutBody}</p>
             <a className="inline-arrow" href="#metodo">
-              Conoce nuestro enfoque <span>→</span>
+              {copy.approachLink} <span>→</span>
             </a>
           </div>
         </div>
         <div className="stats">
           <div>
             <strong>360°</strong>
-            <span>Visión integral del negocio</span>
+            <span>{copy.stats[0]}</span>
           </div>
           <div>
             <strong>3</strong>
-            <span>Modalidades: presencial, online e in-company</span>
+            <span>{copy.stats[1]}</span>
           </div>
           <div>
             <strong>1</strong>
-            <span>Socio durante todo el proceso</span>
+            <span>{copy.stats[2]}</span>
           </div>
         </div>
       </section>
@@ -371,12 +611,12 @@ export default function Home() {
       <section className="section services" id="servicios">
         <div className="section-heading">
           <div className="section-kicker light">
-            <span>02</span> QUÉ HACEMOS
+            <span>02</span> {copy.servicesKicker}
           </div>
           <h2>
-            Experiencia que se convierte
+            {copy.servicesTitle}
             <br />
-            en <em>acción.</em>
+            <em>{copy.servicesAccent}</em>
           </h2>
         </div>
         <div className="service-list">
@@ -394,7 +634,7 @@ export default function Home() {
               </div>
               <a
                 href="#contacto"
-                aria-label={`Consultar sobre ${service.title}`}
+                aria-label={`${copy.serviceAria} ${service.title}`}
               >
                 ↗
               </a>
@@ -406,75 +646,49 @@ export default function Home() {
       <section className="section method" id="metodo">
         <div className="method-copy">
           <div className="section-kicker">
-            <span>03</span> CÓMO TRABAJAMOS
+            <span>03</span> {copy.methodKicker}
           </div>
           <h2>
-            De la brecha
+            {copy.methodTitle}
             <br />
-            al <em>desempeño.</em>
+            <em>{copy.methodAccent}</em>
           </h2>
-          <p>
-            Un camino claro, adaptado a la realidad de tu organización y medido
-            con resultados concretos.
-          </p>
+          <p>{copy.methodBody}</p>
           <a className="button button-dark" href="#contacto">
-            Empezar ahora <span>→</span>
+            {copy.startNow} <span>→</span>
           </a>
         </div>
         <ol className="timeline">
-          <li>
-            <span>01</span>
-            <div>
-              <h3>Diagnosticar</h3>
-              <p>Entendemos tu contexto, objetivos, procesos y brechas.</p>
-            </div>
-          </li>
-          <li>
-            <span>02</span>
-            <div>
-              <h3>Diseñar</h3>
-              <p>Creamos una hoja de ruta simple, priorizada y viable.</p>
-            </div>
-          </li>
-          <li>
-            <span>03</span>
-            <div>
-              <h3>Implementar</h3>
-              <p>Trabajamos junto al equipo, transfiriendo capacidades.</p>
-            </div>
-          </li>
-          <li>
-            <span>04</span>
-            <div>
-              <h3>Mejorar</h3>
-              <p>Medimos, auditamos y afinamos para sostener el avance.</p>
-            </div>
-          </li>
+          {copy.steps.map(([title, text], index) => (
+            <li key={title}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <div>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </div>
+            </li>
+          ))}
         </ol>
       </section>
 
       <section className="section team" id="equipo">
         <div className="team-heading">
           <div className="section-kicker">
-            <span>04</span> NUESTRO EQUIPO
+            <span>04</span> {copy.teamKicker}
           </div>
           <div>
             <h2>
-              Liderazgo que convierte
+              {copy.teamTitle}
               <br />
-              visión en <em>resultados.</em>
+              <em>{copy.teamAccent}</em>
             </h2>
-            <p>
-              Nuestro equipo directivo reúne experiencia en excelencia
-              empresarial, operaciones, logística, transformación digital y
-              soluciones de inteligencia artificial.
-            </p>
+            <p>{copy.teamBody}</p>
           </div>
         </div>
 
         <div className="leadership-grid-heading">
-          <span>Equipo directivo</span>
-          <p>Una visión compartida desde cinco áreas de especialidad.</p>
+          <span>{copy.leadershipLabel}</span>
+          <p>{copy.leadershipBody}</p>
         </div>
 
         <div className="leadership-grid">
@@ -503,25 +717,21 @@ export default function Home() {
       <section className="section clients" id="clientes">
         <div className="clients-heading">
           <div className="section-kicker">
-            <span>05</span> NUESTROS CLIENTES
+            <span>05</span> {copy.clientsKicker}
           </div>
           <div>
             <h2>
-              Confianza construida
+              {copy.clientsTitle}
               <br />
-              con <em>resultados.</em>
+              <em>{copy.clientsAccent}</em>
             </h2>
-            <p>
-              Acompañamos a organizaciones públicas, privadas y multilaterales
-              en la construcción de sistemas más sólidos, eficientes y
-              sostenibles.
-            </p>
+            <p>{copy.clientsBody}</p>
           </div>
         </div>
 
         <div className="clients-meta">
           <strong>{clients.length}</strong>
-          <span>organizaciones que han confiado en nuestra experiencia</span>
+          <span>{copy.clientsCount}</span>
         </div>
 
         <div className="clients-grid">
@@ -541,35 +751,32 @@ export default function Home() {
       <section className="contact" id="contacto">
         <div className="contact-copy">
           <div className="section-kicker light">
-            <span>06</span> HABLEMOS
+            <span>06</span> {copy.contactKicker}
           </div>
           <h2>
-            Tu próximo nivel
+            {copy.contactLine1}
             <br />
-            empieza con una
+            {copy.contactLine2}
             <br />
-            <em>conversación.</em>
+            <em>{copy.contactAccent}</em>
           </h2>
-          <p>
-            Cuéntanos qué quieres mejorar. La primera evaluación es gratuita y
-            sin compromiso.
-          </p>
+          <p>{copy.contactBody}</p>
           <div className="contact-details">
             <div className="contact-detail-group">
-              <span>Panamá · Oficina principal</span>
+              <span>{copy.panamaOffice}</span>
               <a href="tel:+5078318353">+507 831-8353</a>
               <a href="tel:+50767199642">+507 6719-9642</a>
             </div>
             <a href="mailto:info@eqpconsulting.com">
-              <span>Email</span>info@eqpconsulting.com
+              <span>{copy.email}</span>info@eqpconsulting.com
             </a>
             <p>
-              <span>Sede</span>Ciudad de Panamá, Panamá
+              <span>{copy.headquarters}</span>{copy.panamaCity}
             </p>
           </div>
           <div className="international-directory">
             <p className="international-directory-title">
-              Atención internacional
+              {copy.internationalSupport}
             </p>
             <div className="international-directory-grid">
               {internationalContacts.map((contact) => (
@@ -581,7 +788,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <ContactForm />
+        <ContactForm locale={locale} />
       </section>
 
       <footer>
@@ -596,23 +803,20 @@ export default function Home() {
               decoding="async"
             />
           </a>
-          <p>
-            Consultoría y capacitación para organizaciones que quieren mejorar
-            de verdad.
-          </p>
+          <p>{copy.footerDescription}</p>
         </div>
 
-        <div className="footer-contact-columns" aria-label="Datos de contacto">
+        <div className="footer-contact-columns" aria-label={copy.contactDetailsLabel}>
           <section className="footer-contact-column" aria-labelledby="footer-panama">
-            <h3 id="footer-panama"><span>01</span> Panamá</h3>
-            <p className="footer-contact-subtitle">Oficina principal</p>
+            <h3 id="footer-panama"><span>01</span> {copy.panama}</h3>
+            <p className="footer-contact-subtitle">{copy.mainOffice}</p>
             <div className="footer-contact-list">
               <div className="footer-contact-cluster">
                 <span className="footer-contact-icon" aria-hidden="true">
                   <FaPhoneAlt />
                 </span>
                 <span>
-                  <small>Teléfonos</small>
+                  <small>{copy.phones}</small>
                   <span className="footer-inline-links">
                     <a href="tel:+5078318353">+507 831-8353</a>
                     <a href="tel:+50767199642">+507 6719-9642</a>
@@ -624,7 +828,7 @@ export default function Home() {
                   <FaEnvelope />
                 </span>
                 <span>
-                  <small>Email</small>
+                  <small>{copy.email}</small>
                   info@eqpconsulting.com
                 </span>
               </a>
@@ -633,8 +837,8 @@ export default function Home() {
                   <FaMapMarkerAlt />
                 </span>
                 <span>
-                  <small>Sede</small>
-                  Ciudad de Panamá, Panamá
+                  <small>{copy.headquarters}</small>
+                  {copy.panamaCity}
                 </span>
               </div>
               <a
@@ -654,8 +858,8 @@ export default function Home() {
           </section>
 
           <section className="footer-contact-column" aria-labelledby="footer-global">
-            <h3 id="footer-global"><span>02</span> Internacional</h3>
-            <p className="footer-contact-subtitle">Atención global</p>
+            <h3 id="footer-global"><span>02</span> {copy.international}</h3>
+            <p className="footer-contact-subtitle">{copy.globalSupport}</p>
             <div className="footer-contact-list footer-contact-list--international">
               {internationalContacts.map((contact) => (
                 <a href={contact.href} key={contact.location}>
@@ -673,9 +877,13 @@ export default function Home() {
         </div>
 
         <small className="footer-legal">
-          © 2026 EQP Consulting. Todos los derechos reservados.
+          {copy.legal}
         </small>
       </footer>
     </main>
   );
+}
+
+export default function Home() {
+  return <SitePage locale="es" />;
 }

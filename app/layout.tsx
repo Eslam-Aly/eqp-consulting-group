@@ -13,7 +13,14 @@ export const metadata: Metadata = {
   applicationName: "EQP Consulting",
   title: siteTitle,
   description: siteDescription,
-  alternates: { canonical: "/" },
+  alternates: {
+    canonical: "/",
+    languages: {
+      "es": "/",
+      "en": "/en",
+      "x-default": "/",
+    },
+  },
   authors: [{ name: "EQP Consulting", url: siteUrl }],
   creator: "EQP Consulting",
   publisher: "EQP Consulting",
@@ -33,6 +40,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "es_ES",
+    alternateLocale: ["en_US"],
     url: "/",
     siteName: "EQP Consulting",
     title: siteTitle,
