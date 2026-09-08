@@ -10,26 +10,38 @@ workerUrl.searchParams.set("export", `${Date.now()}`);
 
 process.env.VERCEL_PROJECT_PRODUCTION_URL = "eqp-consulting-group.vercel.app";
 const { default: worker } = await import(workerUrl.href);
-const response = await worker.fetch(
-  new Request("https://eqp-consulting-group.vercel.app/", {
-    headers: { accept: "text/html" },
-  }),
-  {
-    ASSETS: {
-      fetch: async () => new Response("Not found", { status: 404 }),
-    },
+const routes = ["/", "/en"];
+const env = {
+  ASSETS: {
+    fetch: async () => new Response("Not found", { status: 404 }),
   },
-  {
-    waitUntil() {},
-    passThroughOnException() {},
-  },
-);
-
-if (!response.ok) {
-  throw new Error(`Static export failed with status ${response.status}`);
-}
+};
+const ctx = {
+  waitUntil() {},
+  passThroughOnException() {},
+};
 
 await rm(outputDirectory, { recursive: true, force: true });
 await mkdir(outputDirectory, { recursive: true });
 await cp(clientDirectory, outputDirectory, { recursive: true });
-await writeFile(new URL("index.html", outputDirectory), await response.text());
+
+for (const route of routes) {
+  const response = await worker.fetch(
+    new Request(new URL(route, "https://eqp-consulting-group.vercel.app"), {
+      headers: { accept: "text/html" },
+    }),
+    env,
+    ctx,
+  );
+
+  if (!response.ok) {
+    throw new Error(
+      `Static export failed for ${route} with status ${response.status}`,
+    );
+  }
+
+  const routeDirectory =
+    route === "/" ? outputDirectory : new URL(`.${route}/`, outputDirectory);
+  await mkdir(routeDirectory, { recursive: true });
+  await writeFile(new URL("index.html", routeDirectory), await response.text());
+}
