@@ -1,10 +1,10 @@
+/* eslint-disable @next/next/no-html-link-for-pages -- Language links intentionally force a full document navigation on the static deployment. */
 import {
   FaEnvelope,
   FaLinkedin,
   FaMapMarkerAlt,
   FaPhoneAlt,
 } from "react-icons/fa";
-import Link from "next/link";
 import ContactForm from "./ContactForm";
 
 const servicesByLocale = {
@@ -506,23 +506,23 @@ export function SitePage({ locale }: { locale: Locale }) {
         </nav>
         <div className="header-actions">
           <div className="language-switcher" aria-label={copy.languageLabel}>
-            <Link
+            <a
               href="/"
               hrefLang="es"
               lang="es"
               aria-current={locale === "es" ? "page" : undefined}
             >
               ES
-            </Link>
+            </a>
             <span aria-hidden="true">/</span>
-            <Link
+            <a
               href="/en"
               hrefLang="en"
               lang="en"
               aria-current={locale === "en" ? "page" : undefined}
             >
               EN
-            </Link>
+            </a>
           </div>
           <a className="nav-cta" href="#contacto">
             {copy.navCta}
