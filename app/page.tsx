@@ -418,6 +418,8 @@ const copyByLocale = {
     contactAccent: "conversación.",
     contactBody:
       "Cuéntanos qué quieres mejorar. La primera evaluación es gratuita y sin compromiso.",
+    spokenLanguagesLabel: "Hablamos",
+    spokenLanguages: "Español · Inglés · Árabe",
     panamaOffice: "Panamá · Oficina principal",
     email: "Email",
     headquarters: "Sede",
@@ -505,6 +507,8 @@ const copyByLocale = {
     contactAccent: "conversation.",
     contactBody:
       "Tell us what you want to improve. Your initial assessment is free and carries no obligation.",
+    spokenLanguagesLabel: "We speak",
+    spokenLanguages: "English · Arabic · Spanish",
     panamaOffice: "Panama · Main office",
     email: "Email",
     headquarters: "Headquarters",
@@ -588,6 +592,8 @@ const copyByLocale = {
     contactAccent: "محادثة.",
     contactBody:
       "أخبرنا بما تريد تطويره. التقييم الأولي مجاني ومن دون أي التزام.",
+    spokenLanguagesLabel: "نتحدث",
+    spokenLanguages: "العربية · الإنجليزية · الإسبانية",
     panamaOffice: "بنما · المكتب الرئيسي",
     email: "البريد الإلكتروني",
     headquarters: "المقر",
@@ -919,6 +925,13 @@ export function SitePage({ locale }: { locale: Locale }) {
             <em>{copy.contactAccent}</em>
           </h2>
           <p>{copy.contactBody}</p>
+          <div
+            className="spoken-languages"
+            aria-label={`${copy.spokenLanguagesLabel}: ${copy.spokenLanguages}`}
+          >
+            <span>{copy.spokenLanguagesLabel}</span>
+            <strong>{copy.spokenLanguages}</strong>
+          </div>
           <div className="contact-details">
             <div className="contact-detail-group">
               <span>{copy.panamaOffice}</span>

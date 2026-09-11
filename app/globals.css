@@ -727,11 +727,36 @@ h2 em {
   max-width: 520px;
   line-height: 1.7;
 }
+.spoken-languages {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  max-width: 520px;
+  margin-top: 26px;
+  padding: 14px 16px;
+  border-left: 2px solid var(--lime);
+  background: rgba(255, 255, 255, 0.055);
+  color: #dce8ed;
+  font-size: 13px;
+}
+.spoken-languages span {
+  color: var(--lime);
+  font: 700 10px "Manrope", sans-serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.spoken-languages strong {
+  font-weight: 500;
+}
 .contact-details {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 26px 35px;
   margin-top: 45px;
+}
+.spoken-languages + .contact-details {
+  margin-top: 28px;
 }
 .contact-details a,
 .contact-details p,
@@ -1044,6 +1069,14 @@ footer {
 .site-main--rtl a[href^="mailto:"] {
   direction: ltr;
   unicode-bidi: isolate;
+}
+.site-main--rtl .spoken-languages {
+  border-right: 2px solid var(--lime);
+  border-left: 0;
+}
+.site-main--rtl .spoken-languages span {
+  font-family: Tahoma, Arial, sans-serif;
+  letter-spacing: 0;
 }
 .site-main--rtl .service-card:hover {
   padding-left: 8px;
