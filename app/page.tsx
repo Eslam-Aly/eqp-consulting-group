@@ -4,6 +4,7 @@ import {
   FaLinkedin,
   FaMapMarkerAlt,
   FaPhoneAlt,
+  FaWhatsapp,
 } from "react-icons/fa";
 import ContactForm from "./ContactForm";
 
@@ -46,6 +47,26 @@ const servicesByLocale = {
       title: "Management and productivity",
       text: "We optimize processes, indicators and controls to reduce costs, improve performance and elevate the customer experience.",
       tags: ["Processes", "KPIs", "Continuous improvement"],
+    },
+  ],
+  ar: [
+    {
+      number: "01",
+      title: "استشارات الأيزو",
+      text: "نصمّم ونطبّق أنظمة إدارة متوافقة مع ISO 9001 وISO 13485 وISO 45001، بدءًا من التقييم الأولي وحتى الحصول على الشهادة.",
+      tags: ["التقييم", "التطبيق", "التدقيق"],
+    },
+    {
+      number: "02",
+      title: "التدريب المؤسسي",
+      text: "نحوّل متطلبات المواصفات إلى معرفة عملية تمكّن كل فريق من استدامة نظام الإدارة وتطويره باستمرار.",
+      tags: ["دورات داخلية", "تعلّم إلكتروني", "ورش عمل"],
+    },
+    {
+      number: "03",
+      title: "الإدارة والإنتاجية",
+      text: "نطوّر العمليات والمؤشرات والضوابط لخفض التكاليف ورفع الأداء وتحسين تجربة العملاء.",
+      tags: ["العمليات", "مؤشرات الأداء", "التحسين المستمر"],
     },
   ],
 } as const;
@@ -156,6 +177,7 @@ const leadershipTeam = [
     height: 978,
     name: "Emigdio Quintero",
     role: "Managing Director",
+    roleAr: "المدير العام",
   },
   {
     image: "/team/leadership/isaac-de-leon.webp",
@@ -163,6 +185,7 @@ const leadershipTeam = [
     height: 1125,
     name: "Isaac De León",
     role: "Director of Business Excellence & Supply Chain Solutions",
+    roleAr: "مدير التميز المؤسسي وحلول سلاسل الإمداد",
   },
   {
     image: "/team/leadership/angelica-ospino.webp",
@@ -170,6 +193,7 @@ const leadershipTeam = [
     height: 1125,
     name: "Angelica Ospino",
     role: "Director of Operational Excellence",
+    roleAr: "مديرة التميز التشغيلي",
   },
   {
     image: "/team/leadership/eduardo-candanedo.webp",
@@ -177,6 +201,7 @@ const leadershipTeam = [
     height: 1125,
     name: "Eduardo Candanedo",
     role: "Director of Logistics & International Trade",
+    roleAr: "مدير الخدمات اللوجستية والتجارة الدولية",
   },
   {
     image: "/team/leadership/eslam-aly.webp",
@@ -184,6 +209,7 @@ const leadershipTeam = [
     height: 879,
     name: "Eslam Aly",
     role: "Director of Digital Transformation & AI Solutions",
+    roleAr: "مدير التحول الرقمي وحلول الذكاء الاصطناعي",
   },
 ];
 
@@ -228,6 +254,28 @@ const internationalContactsByLocale = {
     },
     {
       location: "Kyiv, Ukraine",
+      phone: "+380 96 213 1304",
+      href: "tel:+380962131304",
+    },
+  ],
+  ar: [
+    {
+      location: "برلين، ألمانيا",
+      phone: "+49 176 2424 3790",
+      href: "tel:+4917624243790",
+    },
+    {
+      location: "الولايات المتحدة",
+      phone: "+1 (800) 295-7053",
+      href: "tel:+18002957053",
+    },
+    {
+      location: "مدريد، إسبانيا",
+      phone: "+34 613 849 845",
+      href: "tel:+34613849845",
+    },
+    {
+      location: "كييف، أوكرانيا",
       phone: "+380 96 213 1304",
       href: "tel:+380962131304",
     },
@@ -299,7 +347,7 @@ const clients = [
   },
 ];
 
-type Locale = "es" | "en";
+export type Locale = "es" | "en" | "ar";
 
 const copyByLocale = {
   es: {
@@ -383,6 +431,10 @@ const copyByLocale = {
     phones: "Teléfonos",
     international: "Internacional",
     globalSupport: "Atención global",
+    whatsappLabel: "Escríbenos por WhatsApp",
+    whatsappShort: "WhatsApp",
+    whatsappMessage:
+      "Hola, me gustaría recibir información sobre los servicios de EQP Consulting.",
     legal: "© 2026 EQP Consulting. Todos los derechos reservados.",
   },
   en: {
@@ -466,7 +518,94 @@ const copyByLocale = {
     phones: "Phone numbers",
     international: "International",
     globalSupport: "Global support",
+    whatsappLabel: "Chat with us on WhatsApp",
+    whatsappShort: "WhatsApp",
+    whatsappMessage:
+      "Hello, I would like more information about EQP Consulting services.",
     legal: "© 2026 EQP Consulting. All rights reserved.",
+  },
+  ar: {
+    brandHome: "EQP للاستشارات، الصفحة الرئيسية",
+    navigationLabel: "التنقل الرئيسي",
+    languageLabel: "اختيار اللغة",
+    nav: ["من نحن", "خدماتنا", "منهجيتنا", "فريقنا", "عملاؤنا", "تواصل معنا"],
+    navCta: "تقييم مجاني",
+    eyebrow: "استشارات وتدريب الأيزو",
+    heroLine1: "أنظمة تقود",
+    heroLine2: "مؤسستك نحو",
+    heroAccent: "النتائج.",
+    heroLede:
+      "نساعد المؤسسات حول العالم على تحويل الجودة والسلامة والكفاءة إلى ميزة تنافسية.",
+    proof: ["خبرة متخصصة", "استشارات حضورية وعن بُعد", "نطاق عالمي"],
+    requestAssessment: "اطلب تقييمًا",
+    exploreServices: "استكشف خدماتنا",
+    standardsLabel: "مجالات الخبرة",
+    aboutKicker: "من نحن",
+    aboutTitle: "التحسين لا يحدث بالمصادفة.",
+    aboutAccent: "بل يُصمَّم.",
+    aboutLead:
+      "نحن متخصصون في الاستشارات الإدارية والتدريب المؤسسي، ونجمع بين الخبرة في المواصفات والتجربة التشغيلية ونهج إنساني لإدارة التغيير.",
+    aboutBody:
+      "هدفنا ليس تسليم مستندات، بل بناء أنظمة بسيطة يتبنّاها فريق العمل وترتبط مباشرة بنتائج المؤسسة.",
+    approachLink: "تعرّف على منهجيتنا",
+    stats: [
+      "رؤية متكاملة للأعمال",
+      "خدمات حضورية وعن بُعد وداخل المؤسسة",
+      "شريك واحد طوال مراحل المشروع",
+    ],
+    servicesKicker: "ماذا نقدم",
+    servicesTitle: "خبرات تتحول",
+    servicesAccent: "إلى إنجاز.",
+    serviceAria: "استفسر عن",
+    methodKicker: "كيف نعمل",
+    methodTitle: "من تحديد الفجوة",
+    methodAccent: "إلى تحقيق الأداء.",
+    methodBody:
+      "مسار واضح يناسب واقع مؤسستك ويُقاس من خلال نتائج ملموسة.",
+    startNow: "ابدأ الآن",
+    steps: [
+      ["التقييم", "نفهم واقع مؤسستك وأهدافها وعملياتها والفجوات القائمة."],
+      ["التصميم", "نضع خارطة طريق واضحة ومرتبة حسب الأولويات وقابلة للتنفيذ."],
+      ["التطبيق", "نعمل إلى جانب فريقك وننقل إليه المعرفة والقدرات اللازمة."],
+      ["التحسين", "نقيس النتائج وندقق ونطوّر لضمان استدامة التقدم."],
+    ],
+    teamKicker: "فريقنا",
+    teamTitle: "قيادة تحوّل",
+    teamAccent: "الرؤية إلى نتائج.",
+    teamBody:
+      "يجمع فريقنا القيادي خبرات في التميز المؤسسي والعمليات والخدمات اللوجستية والتحول الرقمي وحلول الذكاء الاصطناعي.",
+    leadershipLabel: "الفريق القيادي",
+    leadershipBody: "رؤية مشتركة تجمع خمس مجالات من الخبرة المتخصصة.",
+    clientsKicker: "عملاؤنا",
+    clientsTitle: "ثقة بُنيت",
+    clientsAccent: "على النتائج.",
+    clientsBody:
+      "ندعم المؤسسات العامة والخاصة ومتعددة الأطراف في بناء أنظمة أكثر قوة وكفاءة واستدامة.",
+    clientsCount: "مؤسسة وثقت بخبراتنا",
+    contactKicker: "لنتحدث",
+    contactLine1: "مستواك القادم",
+    contactLine2: "يبدأ من",
+    contactAccent: "محادثة.",
+    contactBody:
+      "أخبرنا بما تريد تطويره. التقييم الأولي مجاني ومن دون أي التزام.",
+    panamaOffice: "بنما · المكتب الرئيسي",
+    email: "البريد الإلكتروني",
+    headquarters: "المقر",
+    panamaCity: "مدينة بنما، بنما",
+    internationalSupport: "الدعم الدولي",
+    footerDescription:
+      "استشارات وتدريب للمؤسسات التي تسعى إلى تحسين حقيقي ومستدام.",
+    contactDetailsLabel: "بيانات التواصل",
+    panama: "بنما",
+    mainOffice: "المكتب الرئيسي",
+    phones: "أرقام الهاتف",
+    international: "دولي",
+    globalSupport: "دعم عالمي",
+    whatsappLabel: "تواصل معنا عبر واتساب",
+    whatsappShort: "واتساب",
+    whatsappMessage:
+      "مرحبًا، أود الحصول على مزيد من المعلومات حول خدمات EQP Consulting.",
+    legal: "© 2026 EQP Consulting. جميع الحقوق محفوظة.",
   },
 } as const;
 
@@ -483,9 +622,15 @@ export function SitePage({ locale }: { locale: Locale }) {
   const copy = copyByLocale[locale];
   const services = servicesByLocale[locale];
   const internationalContacts = internationalContactsByLocale[locale];
+  const isRtl = locale === "ar";
+  const whatsappUrl = `https://wa.me/50767199642?text=${encodeURIComponent(copy.whatsappMessage)}`;
 
   return (
-    <main lang={locale}>
+    <main
+      lang={locale}
+      dir={isRtl ? "rtl" : "ltr"}
+      className={isRtl ? "site-main site-main--rtl" : "site-main"}
+    >
       <header className="site-header">
         <a className="brand" href="#inicio" aria-label={copy.brandHome}>
           <img
@@ -522,6 +667,15 @@ export function SitePage({ locale }: { locale: Locale }) {
               aria-current={locale === "en" ? "page" : undefined}
             >
               EN
+            </a>
+            <span aria-hidden="true">/</span>
+            <a
+              href="/ar"
+              hrefLang="ar"
+              lang="ar"
+              aria-current={locale === "ar" ? "page" : undefined}
+            >
+              AR
             </a>
           </div>
           <a className="nav-cta" href="#contacto">
@@ -692,25 +846,29 @@ export function SitePage({ locale }: { locale: Locale }) {
         </div>
 
         <div className="leadership-grid">
-          {leadershipTeam.map((member, index) => (
-            <article className="leadership-card" key={member.name}>
-              <div className="leadership-card-photo">
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <img
-                  src={member.image}
-                  alt={`${member.name}, ${member.role}`}
-                  width={member.width}
-                  height={member.height}
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <div className="leadership-card-copy">
-                <h3>{member.name}</h3>
-                <p>{member.role}</p>
-              </div>
-            </article>
-          ))}
+          {leadershipTeam.map((member, index) => {
+            const memberRole = locale === "ar" ? member.roleAr : member.role;
+
+            return (
+              <article className="leadership-card" key={member.name}>
+                <div className="leadership-card-photo">
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <img
+                    src={member.image}
+                    alt={`${member.name}, ${memberRole}`}
+                    width={member.width}
+                    height={member.height}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div className="leadership-card-copy">
+                  <h3>{member.name}</h3>
+                  <p>{memberRole}</p>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </section>
 
@@ -880,6 +1038,18 @@ export function SitePage({ locale }: { locale: Locale }) {
           {copy.legal}
         </small>
       </footer>
+
+      <a
+        className="whatsapp-button"
+        href={whatsappUrl}
+        target="_blank"
+        rel="noreferrer"
+        aria-label={copy.whatsappLabel}
+        title={copy.whatsappLabel}
+      >
+        <FaWhatsapp aria-hidden="true" />
+        <span>{copy.whatsappShort}</span>
+      </a>
     </main>
   );
 }

@@ -984,6 +984,79 @@ footer {
   color: #777f92;
   font-size: 10px;
 }
+.whatsapp-button {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 50;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 18px;
+  border-radius: 999px;
+  background: #25d366;
+  color: #fff;
+  box-shadow: 0 12px 32px rgba(3, 38, 59, 0.3);
+  font: 700 13px "Manrope", sans-serif;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.whatsapp-button svg {
+  width: 23px;
+  height: 23px;
+}
+.whatsapp-button:hover {
+  background: #1fbd5a;
+  box-shadow: 0 15px 36px rgba(3, 38, 59, 0.36);
+  transform: translateY(-2px);
+}
+.whatsapp-button:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+.site-main--rtl {
+  font-family: Tahoma, Arial, sans-serif;
+  text-align: right;
+}
+.site-main--rtl h1,
+.site-main--rtl h2,
+.site-main--rtl h3,
+.site-main--rtl .eyebrow,
+.site-main--rtl .section-kicker,
+.site-main--rtl .international-directory-title,
+.site-main--rtl .footer-contact-column h3,
+.site-main--rtl .footer-contact-list small {
+  font-family: Tahoma, Arial, sans-serif;
+  letter-spacing: 0;
+}
+.site-main--rtl .hero {
+  direction: ltr;
+}
+.site-main--rtl .hero-copy {
+  direction: rtl;
+  text-align: right;
+}
+.site-main--rtl .standards-strip,
+.site-main--rtl a[href^="tel:"],
+.site-main--rtl a[href^="mailto:"] {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+.site-main--rtl .service-card:hover {
+  padding-left: 8px;
+  padding-right: 20px;
+}
+.site-main--rtl .leadership-card-photo > span {
+  right: 16px;
+  left: auto;
+}
+.site-main--rtl .section-heading h2,
+.site-main--rtl .leadership-grid-heading p {
+  text-align: right;
+}
 @media (max-width: 1200px) {
   .site-header {
     padding-inline: 28px;
@@ -1078,6 +1151,22 @@ footer {
   .language-switcher {
     gap: 5px;
     font-size: 10px;
+  }
+  .whatsapp-button {
+    right: 18px;
+    bottom: 18px;
+    width: 54px;
+    min-height: 54px;
+    padding: 0;
+    justify-content: center;
+  }
+  .whatsapp-button span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
   }
   .hero {
     padding: 120px 22px 40px;
@@ -1210,6 +1299,10 @@ footer {
   .section-heading h2 {
     font-size: 43px;
   }
+  .site-main--rtl .section-heading h2,
+  .site-main--rtl .leadership-grid-heading p {
+    text-align: right;
+  }
   .intro h2 {
     font-size: 43px;
   }
@@ -1222,6 +1315,15 @@ footer {
   }
   .footer-brand-block .brand {
     margin-top: -20px;
+  }
+}
+@media (max-width: 360px) {
+  .site-header .brand,
+  .site-header .brand img {
+    width: 104px;
+  }
+  .nav-cta {
+    padding-inline: 7px;
   }
 }
 @media (prefers-reduced-motion: no-preference) {

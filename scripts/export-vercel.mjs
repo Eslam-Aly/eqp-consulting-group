@@ -10,7 +10,7 @@ workerUrl.searchParams.set("export", `${Date.now()}`);
 
 process.env.VERCEL_PROJECT_PRODUCTION_URL = "eqp-consulting-group.vercel.app";
 const { default: worker } = await import(workerUrl.href);
-const routes = ["/", "/en"];
+const routes = ["/", "/en", "/ar"];
 const env = {
   ASSETS: {
     fetch: async () => new Response("Not found", { status: 404 }),
@@ -44,9 +44,15 @@ for (const route of routes) {
     route === "/" ? outputDirectory : new URL(`.${route}/`, outputDirectory);
   await mkdir(routeDirectory, { recursive: true });
   const renderedHtml = await response.text();
-  const localizedHtml =
-    route === "/en"
-      ? renderedHtml.replace('<html lang="es">', '<html lang="en">')
-      : renderedHtml;
+  const documentAttributes = {
+    "/en": '<html lang="en" dir="ltr">',
+    "/ar": '<html lang="ar" dir="rtl">',
+  };
+  const localizedHtml = documentAttributes[route]
+    ? renderedHtml.replace(
+        '<html lang="es" dir="ltr">',
+        documentAttributes[route],
+      )
+    : renderedHtml;
   await writeFile(new URL("index.html", routeDirectory), localizedHtml);
 }

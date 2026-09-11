@@ -17,6 +17,8 @@ const formCopy = {
     namePlaceholder: "Tu nombre",
     company: "Empresa",
     companyPlaceholder: "Nombre de empresa",
+    email: "Email",
+    emailPlaceholder: "tu@empresa.com",
     help: "¿En qué podemos ayudarte?",
     selectService: "Selecciona un servicio",
     isoConsulting: "Consultoría ISO",
@@ -37,6 +39,8 @@ const formCopy = {
     namePlaceholder: "Your name",
     company: "Company",
     companyPlaceholder: "Company name",
+    email: "Email",
+    emailPlaceholder: "you@company.com",
     help: "How can we help?",
     selectService: "Select a service",
     isoConsulting: "ISO consulting",
@@ -49,9 +53,35 @@ const formCopy = {
     submit: "Send inquiry",
     consent: "By submitting, you agree to be contacted by EQP Consulting.",
   },
+  ar: {
+    sending: "جارٍ إرسال استفسارك…",
+    error: "تعذّر إرسال استفسارك. يُرجى المحاولة مرة أخرى.",
+    success: "تم إرسال استفسارك. سيتواصل معك فريقنا قريبًا.",
+    name: "الاسم",
+    namePlaceholder: "اسمك",
+    company: "المؤسسة",
+    companyPlaceholder: "اسم المؤسسة",
+    email: "البريد الإلكتروني",
+    emailPlaceholder: "you@company.com",
+    help: "كيف يمكننا مساعدتك؟",
+    selectService: "اختر خدمة",
+    isoConsulting: "استشارات الأيزو",
+    training: "التدريب المؤسسي",
+    management: "الإدارة والإنتاجية",
+    other: "أخرى",
+    message: "الرسالة",
+    messagePlaceholder: "أخبرنا باختصار عن هدفك…",
+    website: "الموقع الإلكتروني",
+    submit: "إرسال الاستفسار",
+    consent: "بالإرسال، فإنك توافق على أن تتواصل معك EQP Consulting.",
+  },
 } as const;
 
-export default function ContactForm({ locale = "es" }: { locale?: "es" | "en" }) {
+export default function ContactForm({
+  locale = "es",
+}: {
+  locale?: "es" | "en" | "ar";
+}) {
   const copy = formCopy[locale];
   const [submissionState, setSubmissionState] =
     useState<SubmissionState>("idle");
@@ -138,14 +168,14 @@ export default function ContactForm({ locale = "es" }: { locale?: "es" | "en" })
       </div>
 
       <label>
-        Email
+        {copy.email}
         <input
           type="email"
           name="email"
           required
           maxLength={180}
           autoComplete="email"
-          placeholder="tu@empresa.com"
+          placeholder={copy.emailPlaceholder}
         />
       </label>
 

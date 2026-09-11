@@ -16,8 +16,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
     languages: {
-      "es": "/",
-      "en": "/en",
+      es: "/",
+      en: "/en",
+      ar: "/ar",
       "x-default": "/",
     },
   },
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "es_ES",
-    alternateLocale: ["en_US"],
+    alternateLocale: ["en_US", "ar_AR"],
     url: "/",
     siteName: "EQP Consulting",
     title: siteTitle,
@@ -102,42 +103,42 @@ const organizationJsonLd = {
       email: "info@eqpconsulting.com",
       contactType: "customer service",
       areaServed: "Worldwide",
-      availableLanguage: ["Spanish", "English"],
+      availableLanguage: ["Spanish", "English", "Arabic"],
     },
     {
       "@type": "ContactPoint",
       telephone: "+507 6719-9642",
       contactType: "customer service",
       areaServed: "Panama",
-      availableLanguage: ["Spanish", "English"],
+      availableLanguage: ["Spanish", "English", "Arabic"],
     },
     {
       "@type": "ContactPoint",
       telephone: "+49 176 2424 3790",
       contactType: "customer service",
       areaServed: "Germany",
-      availableLanguage: ["English", "Spanish"],
+      availableLanguage: ["English", "Spanish", "Arabic"],
     },
     {
       "@type": "ContactPoint",
       telephone: "+1 800 295 7053",
       contactType: "customer service",
       areaServed: "United States",
-      availableLanguage: ["English", "Spanish"],
+      availableLanguage: ["English", "Spanish", "Arabic"],
     },
     {
       "@type": "ContactPoint",
       telephone: "+34 613 849 845",
       contactType: "customer service",
       areaServed: "Spain",
-      availableLanguage: ["Spanish", "English"],
+      availableLanguage: ["Spanish", "English", "Arabic"],
     },
     {
       "@type": "ContactPoint",
       telephone: "+380 96 213 1304",
       contactType: "customer service",
       areaServed: "Ukraine",
-      availableLanguage: ["English", "Spanish"],
+      availableLanguage: ["English", "Spanish", "Arabic"],
     },
   ],
   hasOfferCatalog: {
@@ -179,7 +180,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="es" suppressHydrationWarning>
+    <html lang="es" dir="ltr" suppressHydrationWarning>
       <head>
         <link
           rel="preload"

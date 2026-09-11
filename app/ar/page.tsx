@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { SitePage } from "../page";
 
-const siteTitle = "EQP Consulting | ISO Consulting & Business Excellence";
+const siteTitle = "EQP Consulting | استشارات الأيزو والتميز المؤسسي";
 const siteDescription =
-  "ISO consulting, corporate training and continuous improvement for organizations worldwide. Management systems that drive results.";
+  "استشارات الأيزو والتدريب المؤسسي والتحسين المستمر للمؤسسات حول العالم. أنظمة إدارية تقود إلى نتائج ملموسة.";
 const socialImageUrl =
   "https://eqp-consulting-group.vercel.app/og-eqp-live-colors.png";
 
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: siteTitle,
   description: siteDescription,
   alternates: {
-    canonical: "/en",
+    canonical: "/ar",
     languages: {
       es: "/",
       en: "/en",
@@ -21,9 +21,9 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "en_US",
-    alternateLocale: ["es_ES", "ar_AR"],
-    url: "/en",
+    locale: "ar_AR",
+    alternateLocale: ["es_ES", "en_US"],
+    url: "/ar",
     siteName: "EQP Consulting",
     title: siteTitle,
     description: siteDescription,
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
         url: socialImageUrl,
         width: 1200,
         height: 630,
-        alt: "EQP Consulting — Systems that drive results",
+        alt: "EQP Consulting — أنظمة تقود مؤسستك نحو النتائج",
       },
     ],
   },
@@ -44,15 +44,16 @@ export const metadata: Metadata = {
   },
 };
 
-export default function EnglishHome() {
+export default function ArabicHome() {
   return (
     <>
       <script
         dangerouslySetInnerHTML={{
-          __html: "document.documentElement.lang='en'",
+          __html:
+            "document.documentElement.lang='ar';document.documentElement.dir='rtl'",
         }}
       />
-      <SitePage locale="en" />
+      <SitePage locale="ar" />
     </>
   );
 }
