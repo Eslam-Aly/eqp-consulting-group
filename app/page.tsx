@@ -203,14 +203,6 @@ const leadershipTeam = [
     role: "Director of Logistics & International Trade",
     roleAr: "مدير الخدمات اللوجستية والتجارة الدولية",
   },
-  {
-    image: "/team/leadership/eslam-aly.webp",
-    width: 900,
-    height: 879,
-    name: "Eslam Aly",
-    role: "Director of Digital Transformation & AI Solutions",
-    roleAr: "مدير التحول الرقمي وحلول الذكاء الاصطناعي",
-  },
 ];
 
 const internationalContactsByLocale = {
@@ -403,9 +395,9 @@ const copyByLocale = {
     teamTitle: "Liderazgo que convierte",
     teamAccent: "visión en resultados.",
     teamBody:
-      "Nuestro equipo directivo reúne experiencia en excelencia empresarial, operaciones, logística, transformación digital y soluciones de inteligencia artificial.",
+      "Nuestro equipo directivo reúne experiencia en excelencia empresarial, cadena de suministro, excelencia operativa, logística y comercio internacional.",
     leadershipLabel: "Equipo directivo",
-    leadershipBody: "Una visión compartida desde cinco áreas de especialidad.",
+    leadershipBody: "Una visión compartida desde cuatro perfiles complementarios.",
     clientsKicker: "NUESTROS CLIENTES",
     clientsTitle: "Confianza construida",
     clientsAccent: "con resultados.",
@@ -492,9 +484,9 @@ const copyByLocale = {
     teamTitle: "Leadership that turns",
     teamAccent: "vision into results.",
     teamBody:
-      "Our leadership team brings together expertise in business excellence, operations, logistics, digital transformation and artificial intelligence solutions.",
+      "Our leadership team brings together expertise in business excellence, supply chains, operational excellence, logistics and international trade.",
     leadershipLabel: "Leadership team",
-    leadershipBody: "One shared vision across five areas of expertise.",
+    leadershipBody: "One shared vision across four complementary leadership profiles.",
     clientsKicker: "OUR CLIENTS",
     clientsTitle: "Trust built",
     clientsAccent: "through results.",
@@ -577,9 +569,9 @@ const copyByLocale = {
     teamTitle: "قيادة تحوّل",
     teamAccent: "الرؤية إلى نتائج.",
     teamBody:
-      "يجمع فريقنا القيادي خبرات في التميز المؤسسي والعمليات والخدمات اللوجستية والتحول الرقمي وحلول الذكاء الاصطناعي.",
+      "يجمع فريقنا القيادي خبرات في التميز المؤسسي وسلاسل الإمداد والتميز التشغيلي والخدمات اللوجستية والتجارة الدولية.",
     leadershipLabel: "الفريق القيادي",
-    leadershipBody: "رؤية مشتركة تجمع خمس مجالات من الخبرة المتخصصة.",
+    leadershipBody: "رؤية مشتركة تجمع أربعة ملفات قيادية متكاملة.",
     clientsKicker: "عملاؤنا",
     clientsTitle: "ثقة بُنيت",
     clientsAccent: "على النتائج.",
