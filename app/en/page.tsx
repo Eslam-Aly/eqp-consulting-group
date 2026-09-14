@@ -3,7 +3,7 @@ import { SitePage } from "../page";
 
 const siteTitle = "EQP Consulting | ISO Consulting & Business Excellence";
 const siteDescription =
-  "ISO consulting, corporate training and continuous improvement for organizations worldwide. Management systems that drive results.";
+  "ISO consulting, corporate training and continuous improvement in Panama and internationally. ISO 9001, ISO/IEC 27001, ISO 14001 and more.";
 const socialImageUrl =
   "https://eqp-consulting-group.vercel.app/og-eqp-live-colors.png";
 

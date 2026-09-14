@@ -4,7 +4,7 @@ import "./globals.css";
 const siteUrl = "https://www.eqpconsulting.com";
 const siteTitle = "EQP Consulting | Consultoría ISO y Excelencia Empresarial";
 const siteDescription =
-  "Consultoría ISO, capacitación empresarial y mejora continua para organizaciones en todo el mundo. Sistemas de gestión que impulsan resultados.";
+  "Consultoría ISO, capacitación empresarial y mejora continua en Panamá y a nivel internacional. ISO 9001, ISO/IEC 27001, ISO 14001 y más.";
 const socialImageUrl =
   "https://eqp-consulting-group.vercel.app/og-eqp-live-colors.png";
 
@@ -91,6 +91,11 @@ const organizationJsonLd = {
     "ISO 9001",
     "ISO 13485",
     "ISO 45001",
+    "ISO 14001",
+    "ISO/IEC 27001",
+    "ISO 22301",
+    "ISO 22000",
+    "ISO 50001",
     "Sistemas de gestión",
     "Excelencia operacional",
     "Mejora continua",

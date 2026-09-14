@@ -13,7 +13,7 @@ const servicesByLocale = {
     {
       number: "01",
       title: "Consultoría ISO",
-      text: "Diseñamos e implementamos sistemas de gestión alineados con ISO 9001, ISO 13485 e ISO 45001, desde el diagnóstico hasta la certificación.",
+      text: "Diseñamos e implementamos sistemas de gestión en Panamá y a nivel internacional, alineados con ISO 9001, ISO 13485, ISO 45001, ISO 14001, ISO/IEC 27001, ISO 22301, ISO 22000, ISO 50001 y más, desde el diagnóstico hasta la preparación para la certificación.",
       tags: ["Diagnóstico", "Implementación", "Auditoría"],
     },
     {
@@ -33,7 +33,7 @@ const servicesByLocale = {
     {
       number: "01",
       title: "ISO consulting",
-      text: "We design and implement management systems aligned with ISO 9001, ISO 13485 and ISO 45001, from initial assessment through certification.",
+      text: "We design and implement management systems in Panama and internationally, aligned with ISO 9001, ISO 13485, ISO 45001, ISO 14001, ISO/IEC 27001, ISO 22301, ISO 22000, ISO 50001 and more, from initial assessment through certification readiness.",
       tags: ["Assessment", "Implementation", "Audit"],
     },
     {
